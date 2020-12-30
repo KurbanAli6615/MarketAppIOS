@@ -33,7 +33,7 @@ class Category {
 func downloadCategoriesFromFirebase(complition: @escaping (_ categoryArray: [Category])-> Void){
     
     var categoryArray: [Category] = []
-    FirebaseRefrence(.Category).getDocuments { (snapshot, error) in
+    FirebaseReference(.Category).getDocuments { (snapshot, error) in
         guard let snapshot = snapshot else{
             complition(categoryArray)
             return
@@ -57,7 +57,7 @@ func saveCategoryToFirebase(_ category: Category) {
     let id = UUID().uuidString
     category.id = id
     
-    FirebaseRefrence(.Category).document(id).setData(categoryDictionaryFrom(category) as! [String : Any])
+    FirebaseReference(.Category).document(id).setData(categoryDictionaryFrom(category) as! [String : Any])
 }
 
 

@@ -15,6 +15,6 @@ enum FCollectionRefrence: String{
     case Basket
 }
 
-func FirebaseRefrence(_ collectionRefence: FCollectionRefrence) -> CollectionReference{
+func FirebaseReference(_ collectionRefence: FCollectionRefrence) -> CollectionReference{
     return Firestore.firestore().collection(collectionRefence.rawValue)
 }
