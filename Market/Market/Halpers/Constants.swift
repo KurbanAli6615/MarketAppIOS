@@ -7,13 +7,16 @@
 
 import Foundation
 
+// IDS And Keys
+
+public let kFILEREFERENCE = "gs://market-76720.appspot.com"
+
+
 // FIrebase Headers
 public let kUSER_PATH = "User"
 public let kCATEGORY_PATH = "Category"
 public let kITEMS_PATH = "Items"
 public let kBASKET_PATH = "Basket"
-
-
 
 
 // Category
