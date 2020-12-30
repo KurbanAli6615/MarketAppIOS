@@ -21,3 +21,14 @@ public let kBASKET_PATH = "Basket"
 public let kNAME = "name"
 public let kIMAGENAME = "imageName"
 public let kOBJECTID = "objectID"
+
+
+// Items
+
+public let kCATEGORYID = "categoryId"
+public let kDESCRIPTION = "description"
+public let kPRICE = "price"
+public let kIMAGELINKS = "imageLinks"
+
+
+

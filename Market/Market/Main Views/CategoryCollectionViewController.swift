@@ -40,13 +40,29 @@ class CategoryCollectionViewController: UICollectionViewController {
         cell.generateCell(categoryArray[indexPath.row])
         return cell
     }
+    
+//    MARK:- UICollection Delegates
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "categoryToItemsSeg", sender: categoryArray[indexPath.row])
+    }
+
+     
 
 //    MARK:- Download Categories
     private func loadCategories(){
         downloadCategoriesFromFirebase { (allCategories) in
-            print("we have ", allCategories.count)
             self.categoryArray = allCategories
             self.collectionView.reloadData()
+        }
+    }
+    
+//    MARK: Navigations
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "categoryToItemsSeg"{
+            let vc = segue.destination as! IteamsTableViewController
+            vc.category = sender as! Category
         }
     }
 }
