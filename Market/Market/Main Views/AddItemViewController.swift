@@ -27,9 +27,16 @@ class AddItemViewController: UIViewController {
     
     var itemImages: [UIImage?] = []
     
+    //    MARK:- View Life Cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(category.id)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulseSync, color: #colorLiteral(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1), padding: nil)
     }
     
     //    MARK:- IBActions
@@ -41,8 +48,11 @@ class AddItemViewController: UIViewController {
             saveToFirebase()
         }
         else{
-            print("Fieds Are required")
-            //            TODO: show error
+//            print("Fieds Are required")
+            self.hud.textLabel.text = "All Fields Are required"
+            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            self.hud.show(in: self.view)
+            self.hud.dismiss(afterDelay: 2.5)
         }
     }
     
@@ -74,6 +84,9 @@ class AddItemViewController: UIViewController {
     //    MARK:- Save Items
     
     private func saveToFirebase(){
+        
+        showLoadingIndicator()
+        
         let item = Item()
         item.id = UUID().uuidString
         item.name = titleTextField.text!
@@ -90,7 +103,24 @@ class AddItemViewController: UIViewController {
             }
         } else{
             saveItemToFirestore(item)
+            self.hideLoadingIndicator()
             popTheView()
+        }
+    }
+    
+//    MARK: Activity Indicator
+    
+    private func showLoadingIndicator(){
+        if activityIndicator != nil {
+            self.view.addSubview(activityIndicator!)
+            activityIndicator!.startAnimating()
+        }
+    }
+    
+    private func hideLoadingIndicator(){
+        if activityIndicator != nil {
+            activityIndicator?.removeFromSuperview()
+            activityIndicator!.stopAnimating()
         }
     }
     

@@ -102,7 +102,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="nJv-nt-9v9">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="nJv-nt-9v9" customClass="ItemTableViewCell" customModule="Market" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nJv-nt-9v9" id="8Ia-kE-xeS">
@@ -157,6 +157,12 @@
                                         <constraint firstItem="Keo-m3-qOG" firstAttribute="centerY" secondItem="8Ia-kE-xeS" secondAttribute="centerY" id="xE8-MD-M11"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descriptionLabel" destination="sdU-Ls-3UU" id="p6a-6D-r6y"/>
+                                    <outlet property="itemImageView" destination="3xC-OL-QoG" id="FEL-UO-eaj"/>
+                                    <outlet property="nameLabel" destination="EO4-sb-NL3" id="QAk-bX-cxQ"/>
+                                    <outlet property="priceLabel" destination="Keo-m3-qOG" id="N4a-gM-Nsv"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

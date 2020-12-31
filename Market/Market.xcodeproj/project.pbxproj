@@ -18,6 +18,8 @@
 		065D104C259B38BA008EB2CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D104B259B38BA008EB2CA /* Constants.swift */; };
 		066900C7259C8B27004AF790 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C6259C8B27004AF790 /* Richability.swift */; };
 		066900CA259C8B90004AF790 /* Downloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C9259C8B90004AF790 /* Downloder.swift */; };
+		06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE351E259DA36700250691 /* ItemTableViewCell.swift */; };
+		06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3521259DA98A00250691 /* HaplerFunctions.swift */; };
 		06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CBA367259B25A500DA2811 /* AppDelegate.swift */; };
 		06CBA36A259B25A500DA2811 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CBA369259B25A500DA2811 /* SceneDelegate.swift */; };
 		06CBA36F259B25A500DA2811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA36D259B25A500DA2811 /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 		065D104B259B38BA008EB2CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		066900C6259C8B27004AF790 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		066900C9259C8B90004AF790 /* Downloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloder.swift; sourceTree = "<group>"; };
+		06AE351E259DA36700250691 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
+		06AE3521259DA98A00250691 /* HaplerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaplerFunctions.swift; sourceTree = "<group>"; };
 		06CBA364259B25A500DA2811 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CBA367259B25A500DA2811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06CBA369259B25A500DA2811 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 				065D1038259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift */,
 				066900C6259C8B27004AF790 /* Richability.swift */,
 				066900C9259C8B90004AF790 /* Downloder.swift */,
+				06AE3521259DA98A00250691 /* HaplerFunctions.swift */,
 				065D104B259B38BA008EB2CA /* Constants.swift */,
 			);
 			path = Halpers;
@@ -77,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */,
+				06AE351E259DA36700250691 /* ItemTableViewCell.swift */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */,
+				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
 				0609D3B9259C5264004F45F1 /* Item.swift in Sources */,
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,
+				06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */,
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,
 				065D104C259B38BA008EB2CA /* Constants.swift in Sources */,
 				066900CA259C8B90004AF790 /* Downloder.swift in Sources */,
