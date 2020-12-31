@@ -45,7 +45,16 @@ class IteamsTableViewController: UITableViewController {
         return cell
     }
     
+    
+    //     MARK: - table view delegate
 
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        showItemView(itemArray[indexPath.row])
+    }
+    
+    
+    
 //     MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,12 +65,19 @@ class IteamsTableViewController: UITableViewController {
         }
         
     }
+    
+    private func showItemView(_ item: Item){
+        let itemVC = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "itemView") as ItemViewController
+        
+        itemVC.item = item
+        
+        self.navigationController?.pushViewController(itemVC, animated: true)
+    }
 
     //     MARK: - Load Items
     
     private func loadItems(){
         downloadItemsFromFirebase(withCaegoryId: category!.id) { (allItems) in
-            print("All items: ", allItems.count)
             self.itemArray = allItems
             self.tableView.reloadData()
         }
