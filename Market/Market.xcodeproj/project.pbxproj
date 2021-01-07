@@ -16,6 +16,8 @@
 		065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D1038259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift */; };
 		065D1046259B32B4008EB2CA /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D1045259B32B4008EB2CA /* Category.swift */; };
 		065D104C259B38BA008EB2CA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D104B259B38BA008EB2CA /* Constants.swift */; };
+		06673E4A25A43FF0004A457C /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06673E4925A43FF0004A457C /* Basket.swift */; };
+		06673E4D25A4654A004A457C /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06673E4C25A4654A004A457C /* BasketViewController.swift */; };
 		066900C7259C8B27004AF790 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C6259C8B27004AF790 /* Richability.swift */; };
 		066900CA259C8B90004AF790 /* Downloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C9259C8B90004AF790 /* Downloder.swift */; };
 		06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE351E259DA36700250691 /* ItemTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 		065D1038259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseCollectionRefrences.swift; sourceTree = "<group>"; };
 		065D1045259B32B4008EB2CA /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		065D104B259B38BA008EB2CA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		06673E4925A43FF0004A457C /* Basket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Basket.swift; sourceTree = "<group>"; };
+		06673E4C25A4654A004A457C /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		066900C6259C8B27004AF790 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		066900C9259C8B90004AF790 /* Downloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloder.swift; sourceTree = "<group>"; };
 		06AE351E259DA36700250691 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */,
 				0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */,
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
+				06673E4C25A4654A004A457C /* BasketViewController.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				065D1045259B32B4008EB2CA /* Category.swift */,
 				0609D3B8259C5264004F45F1 /* Item.swift */,
+				06673E4925A43FF0004A457C /* Basket.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -280,6 +286,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06673E4D25A4654A004A457C /* BasketViewController.swift in Sources */,
 				065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */,
 				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
 				06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */,
@@ -288,6 +295,7 @@
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
+				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,
 				06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */,
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,

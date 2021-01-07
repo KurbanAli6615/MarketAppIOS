@@ -10,8 +10,8 @@ import JGProgressHUD
 
 
 class ItemViewController: UIViewController {
-
-//    MARK:- IBOutlets
+    
+    //    MARK:- IBOutlets
     
     
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -19,7 +19,7 @@ class ItemViewController: UIViewController {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var imageCollectionView: UICollectionView!
     
-//    MARK:- Vars
+    //    MARK:- Vars
     
     var item: Item!
     var itemImages: [UIImage] = []
@@ -28,7 +28,7 @@ class ItemViewController: UIViewController {
     private let cellheight: CGFloat = 196.0
     private let itemsPerRow:CGFloat = 1
     
-//    MARK:- ViewLife cycle
+    //    MARK:- ViewLife cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -36,11 +36,13 @@ class ItemViewController: UIViewController {
         
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
         
-        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "basket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
+        self.navigationItem.rightBarButtonItems = [UIBarButtonItem(image: UIImage(named: "addToBasket"), style: .plain, target: self, action: #selector(self.addToBasketButtonPressed))]
+        
+        descriptionTextView.isEditable = false
     }
     
     //    MARK:- Download Pictures
-  
+    
     private func downloadPictures(){
         if item != nil && item.imageLinks != nil {
             downloadImages(imageUrls: item.imageLinks) { (allImages) in
@@ -53,7 +55,7 @@ class ItemViewController: UIViewController {
     }
     
     //    MARK:- Setup UI
-
+    
     private func setupUI(){
         if item != nil{
             self.title = item.name
@@ -69,7 +71,51 @@ class ItemViewController: UIViewController {
     }
     
     @objc func addToBasketButtonPressed(){
-        print("add to basket", item.name)
+        
+//        TODO: check id user logged in or show login view
+        
+        downloadBasketFromFirestore("1234") { (basket) in
+            if basket == nil {
+                self.createNewBasket()
+            }else{
+                basket!.itemIds.append(self.item.id)
+                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+            }
+        }
+    }
+    
+    //    MARK:- Add to Basket
+    
+    private func createNewBasket(){
+        let newBasket = Basket()
+        newBasket.id = UUID().uuidString
+        newBasket.ownerID = "1234"
+        newBasket.itemIds = [self.item.id]
+        
+        saveBasketToFirestore(newBasket)
+        
+        self.hud.textLabel.text = "Added to basket"
+        self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+        self.hud.show(in: self.view)
+        self.hud.dismiss(afterDelay: 2.0)
+    }
+    
+    private func updateBasket(basket: Basket, withValues:[String : Any]){
+        updateBasketInFirestore(basket, withValues: withValues) { (error) in
+            if error != nil {
+                self.hud.textLabel.text = "Error \(error!.localizedDescription)"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                
+            }else{
+                
+                self.hud.textLabel.text = "Added to basket"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
+        }
     }
 }
 
@@ -80,7 +126,7 @@ extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelega
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-         
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCollectionViewCell
         
         if itemImages.count > 0 {
@@ -92,36 +138,36 @@ extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelega
 
 extension ItemViewController: UICollectionViewDelegateFlowLayout{
     
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-//
-//        let avalibleWidth = collectionView.frame.width - sectionInsets.left
-//
-//        print(avalibleWidth)
-//        return CGSize(width: avalibleWidth, height: cellheight)
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-//        return sectionInsets
-//    }
-//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-//        return sectionInsets.left
-//    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+    //
+    //        let avalibleWidth = collectionView.frame.width - sectionInsets.left
+    //
+    //        print(avalibleWidth)
+    //        return CGSize(width: avalibleWidth, height: cellheight)
+    //    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+    //        return sectionInsets
+    //    }
+    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    //        return sectionInsets.left
+    //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+        
         let imgWidth = view.bounds.width 
-
+        
         return CGSize(width: imgWidth, height: cellheight)
     }
 }

@@ -66,3 +66,34 @@ func downloadItemsFromFirebase(withCaegoryId: String, completion: @escaping(_ it
         completion(itemArray)
     }
 }
+
+func downloadItems(_ withIDs: [String], complition: @escaping (_ itemArray: [Item])-> Void){
+    var count = 0
+    var itemArray: [Item] = []
+    
+    if withIDs.count > 0{
+        
+        for itemId in withIDs{
+            FirebaseReference(.Items).document(itemId).getDocument { (snapshot, error) in
+                guard let snapshot = snapshot else {
+                    complition(itemArray)
+                    return
+                }
+                if snapshot.exists {
+                    
+                    itemArray.append(Item(_dictionary: snapshot.data()! as NSDictionary))
+                count += 1
+                }else{
+                    complition(itemArray)
+                }
+                
+                if count == withIDs.count {
+                    complition(itemArray)
+                }
+            }
+        }
+        
+    }else{
+        complition(itemArray)
+    }
+}
