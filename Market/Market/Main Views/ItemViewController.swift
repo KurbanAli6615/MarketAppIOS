@@ -123,7 +123,7 @@ class ItemViewController: UIViewController {
     //    MARK:- Show Login View
     
     private func showLoginView(){
-        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView ")
+        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
         
         self.present(loginView, animated: true, completion: nil)
     }
