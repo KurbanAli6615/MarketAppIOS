@@ -32,7 +32,7 @@ class FinishRegistrationViewController: UIViewController {
 //    MARK:- IBActions
     
     @IBAction func doneButtonPressed(_ sender: Any) {
-        
+        finishOnBoarding()
     }
     
     @IBAction func cancelButtonPressed(_ sender: Any) {
@@ -52,6 +52,27 @@ class FinishRegistrationViewController: UIViewController {
         }else {
             doneButtonOutlet.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
             doneButtonOutlet.isEnabled = false
+        }
+    }
+    
+    private func finishOnBoarding(){
+        let withValues = [kFIRSTNAME : nameTextField.text!, kLASTNAME : surnameTextField.text!, kFULLNAME : (nameTextField.text! + " " + surnameTextField.text!), kFULLADDRESS : addressTextField.text!, kONBOARD : true] as [String : Any]
+        
+        updateCurrentUserInFirestore(withValues: withValues) { (error) in
+            if error == nil {
+                self.hud.textLabel.text = "Updated!"
+                self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+                
+                self.dismiss(animated: true, completion: nil)
+            }else {
+                print("error updating user ",error?.localizedDescription)
+                self.hud.textLabel.text = error?.localizedDescription
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
+            }
         }
     }
 }

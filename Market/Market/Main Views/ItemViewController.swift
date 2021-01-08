@@ -74,16 +74,18 @@ class ItemViewController: UIViewController {
         
 //        TODO: check id user logged in or show login view
         
-//        downloadBasketFromFirestore("1234") { (basket) in
-//            if basket == nil {
-//                self.createNewBasket()
-//            }else{
-//                basket!.itemIds.append(self.item.id)
-//                self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
-//            }
-//        }
-        
-        showLoginView()
+        if MUser.currentUser() != nil {
+            downloadBasketFromFirestore(MUser.currentId()) { (basket) in
+                if basket == nil {
+                    self.createNewBasket()
+                }else{
+                    basket!.itemIds.append(self.item.id)
+                    self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+                }
+            }
+        }else {
+            showLoginView()
+        }
     }
     
     //    MARK:- Add to Basket
@@ -91,7 +93,7 @@ class ItemViewController: UIViewController {
     private func createNewBasket(){
         let newBasket = Basket()
         newBasket.id = UUID().uuidString
-        newBasket.ownerID = "1234"
+        newBasket.ownerID = MUser.currentId()
         newBasket.itemIds = [self.item.id]
         
         saveBasketToFirestore(newBasket)

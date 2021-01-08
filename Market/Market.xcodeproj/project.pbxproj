@@ -12,6 +12,8 @@
 		0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */; };
 		063A54C225A6DA880003AE30 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C125A6DA880003AE30 /* WelcomeViewController.swift */; };
 		063A54C525A6DE5E0003AE30 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C425A6DE5E0003AE30 /* MUser.swift */; };
+		0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645730A25A8A42D00361347 /* EditProfileViewController.swift */; };
+		0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */; };
 		065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */; };
 		065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */; };
 		065D1036259B2E38008EB2CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 065D1035259B2E38008EB2CA /* GoogleService-Info.plist */; };
@@ -42,6 +44,8 @@
 		0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
 		063A54C125A6DA880003AE30 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		063A54C425A6DE5E0003AE30 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
+		0645730A25A8A42D00361347 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
 		065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		065D1035259B2E38008EB2CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
 				06673E4C25A4654A004A457C /* BasketViewController.swift */,
 				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
+				0645730A25A8A42D00361347 /* EditProfileViewController.swift */,
+				0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */,
 				06D248B325A86889002BC505 /* Login View */,
 			);
 			path = "Main Views";
@@ -313,9 +319,11 @@
 				06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */,
 				06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */,
 				06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */,
+				0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */,
 				0609D3B9259C5264004F45F1 /* Item.swift in Sources */,
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
+				0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */,
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
 				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,

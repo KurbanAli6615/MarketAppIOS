@@ -40,6 +40,12 @@ class ProfileTableViewController: UITableViewController {
         return 3
     }
     
+    // MARK: - Table view delegate
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 // MARK:- Halpers
     private func checkLoginStatus(){
         if MUser.currentUser() == nil {
@@ -70,12 +76,13 @@ class ProfileTableViewController: UITableViewController {
             finishRegistrationButtonOutlet.isEnabled = false
             purchaseHistoryButtonOutlet.isEnabled = false
         }
+        purchaseHistoryButtonOutlet.isEnabled = true
     }
     
 //  MARK:- IBActions
     
     @objc func rightBarButtonItemPressed(){
-        if editButtonItem.title == "Login" {
+        if editBarButtonOutlet.title == "Login" {
             showLoginView()
         }else {
             goToEditProfile()
@@ -92,9 +99,10 @@ class ProfileTableViewController: UITableViewController {
     private func showLoginView(){
         let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
         self.present(loginView, animated: true, completion: nil)
+        
     }
     
     private func goToEditProfile(){
-        print("edit profile")
+        performSegue(withIdentifier: "profileToEditSeg", sender: self)
     }
 }
