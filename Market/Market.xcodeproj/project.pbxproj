@@ -10,6 +10,7 @@
 		0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */; };
 		0609D3B9259C5264004F45F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B8259C5264004F45F1 /* Item.swift */; };
 		0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */; };
+		0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */; };
 		063A54C225A6DA880003AE30 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C125A6DA880003AE30 /* WelcomeViewController.swift */; };
 		063A54C525A6DE5E0003AE30 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C425A6DE5E0003AE30 /* MUser.swift */; };
 		0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645730A25A8A42D00361347 /* EditProfileViewController.swift */; };
@@ -35,6 +36,7 @@
 		06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA372259B25A500DA2811 /* LaunchScreen.storyboard */; };
 		06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */; };
 		06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */; };
+		06DF2FD225AC7B3E0050B74C /* AlgoliyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */; };
 		A4BF8924A6A22E640CA77629 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F573C43ADD01D8697E01CFDA /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +44,7 @@
 		0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteamsTableViewController.swift; sourceTree = "<group>"; };
 		0609D3B8259C5264004F45F1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		063A54C125A6DA880003AE30 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		063A54C425A6DE5E0003AE30 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
 		0645730A25A8A42D00361347 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
@@ -69,6 +72,7 @@
 		06CBA375259B25A500DA2811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliyaService.swift; sourceTree = "<group>"; };
 		3D264033C5D858A6BD39BE4F /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
 		A94E09B205827037592CE4FC /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		F573C43ADD01D8697E01CFDA /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,8 +121,8 @@
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
 				06673E4C25A4654A004A457C /* BasketViewController.swift */,
 				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
-				0645730A25A8A42D00361347 /* EditProfileViewController.swift */,
-				0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */,
+				063A54C125A6DA880003AE30 /* WelcomeViewController.swift */,
+				0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */,
 				06D248B325A86889002BC505 /* Login View */,
 			);
 			path = "Main Views";
@@ -131,6 +135,7 @@
 				063A54C425A6DE5E0003AE30 /* MUser.swift */,
 				0609D3B8259C5264004F45F1 /* Item.swift */,
 				06673E4925A43FF0004A457C /* Basket.swift */,
+				06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,7 +180,8 @@
 			isa = PBXGroup;
 			children = (
 				06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */,
-				063A54C125A6DA880003AE30 /* WelcomeViewController.swift */,
+				0645730A25A8A42D00361347 /* EditProfileViewController.swift */,
+				0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */,
 			);
 			path = "Login View";
 			sourceTree = "<group>";
@@ -327,7 +333,9 @@
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
 				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,
+				0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */,
 				06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */,
+				06DF2FD225AC7B3E0050B74C /* AlgoliyaService.swift in Sources */,
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,
 				065D104C259B38BA008EB2CA /* Constants.swift in Sources */,
 				066900CA259C8B90004AF790 /* Downloder.swift in Sources */,
