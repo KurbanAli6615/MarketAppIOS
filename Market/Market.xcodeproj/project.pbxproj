@@ -36,7 +36,6 @@
 		06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA372259B25A500DA2811 /* LaunchScreen.storyboard */; };
 		06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */; };
 		06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */; };
-		06DF2FD225AC7B3E0050B74C /* AlgoliyaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */; };
 		A4BF8924A6A22E640CA77629 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F573C43ADD01D8697E01CFDA /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
@@ -72,7 +71,6 @@
 		06CBA375259B25A500DA2811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
-		06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliyaService.swift; sourceTree = "<group>"; };
 		3D264033C5D858A6BD39BE4F /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
 		A94E09B205827037592CE4FC /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		F573C43ADD01D8697E01CFDA /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +133,6 @@
 				063A54C425A6DE5E0003AE30 /* MUser.swift */,
 				0609D3B8259C5264004F45F1 /* Item.swift */,
 				06673E4925A43FF0004A457C /* Basket.swift */,
-				06DF2FD125AC7B3E0050B74C /* AlgoliyaService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -335,7 +332,6 @@
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,
 				0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */,
 				06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */,
-				06DF2FD225AC7B3E0050B74C /* AlgoliyaService.swift in Sources */,
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,
 				065D104C259B38BA008EB2CA /* Constants.swift in Sources */,
 				066900CA259C8B90004AF790 /* Downloder.swift in Sources */,

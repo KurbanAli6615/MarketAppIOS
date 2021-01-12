@@ -98,20 +98,3 @@ func downloadItems(_ withIDs: [String], complition: @escaping (_ itemArray: [Ite
     }
 }
 
-//  MARK:- Algoliya Functions
-
-func saveItemToAlgoliya(item: Item) {
-    
-    let index = AlgoliyaServie.shared.index
-    
-    let itemToSave = itemDictionaryFrom(item) as! [String : Any]
-    
-    index.addObject(itemToSave, withID: item.id, requestOptions: nil) { (content, error) in
-        if error != nil {
-            print("Error to save algoliya ", error!.localizedDescription)
-        }else {
-            print("Added to algoliya")
-        }
-    }
-    
-}
