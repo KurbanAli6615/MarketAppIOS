@@ -48,9 +48,9 @@ class BasketViewController: UIViewController {
         
         if MUser.currentUser()!.onBoard {
             
-            tempFunction()
-            addItemsToPurchaseHistory(self.purchaseItemIds)
-            emptyTheBasket()
+//            addItemsToPurchaseHistory(self.purchaseItemIds)
+//            emptyTheBasket()
+            
         }else {
             self.hud.textLabel.text = "Please Complete Your Profile"
             self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
@@ -70,7 +70,6 @@ class BasketViewController: UIViewController {
     private func getBasketItems(){
         if basket != nil{
             downloadItems(basket!.itemIds) { (allItems) in
-                
                 self.allItems = allItems
                 self.updateTotalLable(false)
                 self.tableView.reloadData()
@@ -79,13 +78,6 @@ class BasketViewController: UIViewController {
     }
     
     //    MARK:- halper Functions
-    
-    func tempFunction(){
-        for item in allItems {
-            purchaseItemIds.append(item.id)
-        }
-    }
-    
     
     private func updateTotalLable(_ isEmpty: Bool){
         if isEmpty{

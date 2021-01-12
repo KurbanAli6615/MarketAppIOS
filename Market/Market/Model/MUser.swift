@@ -90,7 +90,7 @@ class MUser{
         return nil
     }
     
-    //    MARK:- Login func
+    //    MARK:- Login function
     
     class func loginUserWith(email:String, password:String, complition: @escaping (_ error: Error?,_ isEmailVerified: Bool) -> Void){
         

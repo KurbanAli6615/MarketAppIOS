@@ -124,7 +124,7 @@ class WelcomeViewController: UIViewController {
         
         MUser.registerUserWith(email: emailTextField.text!, password: passwordTextField.text!) { (error) in
             if error == nil {
-                self.hud.textLabel.text = "Verificatoion Email Sent !"
+                self.hud.textLabel.text = "Verification Email Sent !"
                 self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
                 self.hud.show(in: self.view)
                 self.hud.dismiss(afterDelay: 2.0)
