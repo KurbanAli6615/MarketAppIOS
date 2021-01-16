@@ -60,7 +60,7 @@ class SearchViewController: UIViewController {
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         
-        print("Typing...")
+        
         searchButtonOutlet.isEnabled = textField.text != ""
         
         if searchButtonOutlet.isEnabled{
@@ -77,7 +77,6 @@ class SearchViewController: UIViewController {
     
     private func showSearchField() {
         disableSearchButton()
-        
     }
     
     //    MARK:- Animations
@@ -110,6 +109,13 @@ class SearchViewController: UIViewController {
         itemVC.item = withItem
         self.navigationController?.pushViewController(itemVC, animated: true)
     }
+    
+//    MARK:- Search From firestore
+    
+    private func searchItemFromFireStore(itemName: String) {
+        
+    }
+    
 }
 
 //    MARK: - Extension
