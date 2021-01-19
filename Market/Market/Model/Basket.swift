@@ -12,9 +12,7 @@ class Basket {
     var ownerID:String!
     var itemIds:[String]!
     
-    init() {
-        
-    }
+    init() {}
     
     init(_dictionary: NSDictionary) {
         id = _dictionary[kOBJECTID] as? String

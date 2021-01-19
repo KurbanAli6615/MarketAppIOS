@@ -10,6 +10,7 @@
 		0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */; };
 		0609D3B9259C5264004F45F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B8259C5264004F45F1 /* Item.swift */; };
 		0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */; };
+		062B4E9A25B2E255009258BD /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B4E9925B2E255009258BD /* AlgoliaService.swift */; };
 		0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */; };
 		063A54C225A6DA880003AE30 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C125A6DA880003AE30 /* WelcomeViewController.swift */; };
 		063A54C525A6DE5E0003AE30 /* MUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C425A6DE5E0003AE30 /* MUser.swift */; };
@@ -25,6 +26,7 @@
 		06673E4D25A4654A004A457C /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06673E4C25A4654A004A457C /* BasketViewController.swift */; };
 		066900C7259C8B27004AF790 /* Richability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C6259C8B27004AF790 /* Richability.swift */; };
 		066900CA259C8B90004AF790 /* Downloder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 066900C9259C8B90004AF790 /* Downloder.swift */; };
+		068BECE625B44E4100FE23DC /* ConfirmOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */; };
 		06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE351E259DA36700250691 /* ItemTableViewCell.swift */; };
 		06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3521259DA98A00250691 /* HaplerFunctions.swift */; };
 		06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3524259DC46B00250691 /* ItemViewController.swift */; };
@@ -36,6 +38,7 @@
 		06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA372259B25A500DA2811 /* LaunchScreen.storyboard */; };
 		06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */; };
 		06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */; };
+		06DC8C3825B6D68F000C79CE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC8C3725B6D68F000C79CE /* Order.swift */; };
 		A4BF8924A6A22E640CA77629 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F573C43ADD01D8697E01CFDA /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +46,7 @@
 		0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteamsTableViewController.swift; sourceTree = "<group>"; };
 		0609D3B8259C5264004F45F1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		062B4E9925B2E255009258BD /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		063A54C125A6DA880003AE30 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		063A54C425A6DE5E0003AE30 /* MUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MUser.swift; sourceTree = "<group>"; };
@@ -58,6 +62,7 @@
 		06673E4C25A4654A004A457C /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		066900C6259C8B27004AF790 /* Richability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Richability.swift; sourceTree = "<group>"; };
 		066900C9259C8B90004AF790 /* Downloder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloder.swift; sourceTree = "<group>"; };
+		068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOrderViewController.swift; sourceTree = "<group>"; };
 		06AE351E259DA36700250691 /* ItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemTableViewCell.swift; sourceTree = "<group>"; };
 		06AE3521259DA98A00250691 /* HaplerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaplerFunctions.swift; sourceTree = "<group>"; };
 		06AE3524259DC46B00250691 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +76,7 @@
 		06CBA375259B25A500DA2811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
+		06DC8C3725B6D68F000C79CE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		3D264033C5D858A6BD39BE4F /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
 		A94E09B205827037592CE4FC /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		F573C43ADD01D8697E01CFDA /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,8 +125,8 @@
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
 				06673E4C25A4654A004A457C /* BasketViewController.swift */,
 				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
-				063A54C125A6DA880003AE30 /* WelcomeViewController.swift */,
 				0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */,
+				068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */,
 				06D248B325A86889002BC505 /* Login View */,
 			);
 			path = "Main Views";
@@ -132,7 +138,9 @@
 				065D1045259B32B4008EB2CA /* Category.swift */,
 				063A54C425A6DE5E0003AE30 /* MUser.swift */,
 				0609D3B8259C5264004F45F1 /* Item.swift */,
+				06DC8C3725B6D68F000C79CE /* Order.swift */,
 				06673E4925A43FF0004A457C /* Basket.swift */,
+				062B4E9925B2E255009258BD /* AlgoliaService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,6 +184,7 @@
 		06D248B325A86889002BC505 /* Login View */ = {
 			isa = PBXGroup;
 			children = (
+				063A54C125A6DA880003AE30 /* WelcomeViewController.swift */,
 				06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */,
 				0645730A25A8A42D00361347 /* EditProfileViewController.swift */,
 				0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */,
@@ -321,7 +330,9 @@
 				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
 				06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */,
 				06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */,
+				06DC8C3825B6D68F000C79CE /* Order.swift in Sources */,
 				06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */,
+				062B4E9A25B2E255009258BD /* AlgoliaService.swift in Sources */,
 				0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */,
 				0609D3B9259C5264004F45F1 /* Item.swift in Sources */,
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
@@ -331,6 +342,7 @@
 				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,
 				0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */,
+				068BECE625B44E4100FE23DC /* ConfirmOrderViewController.swift in Sources */,
 				06AE351F259DA36700250691 /* ItemTableViewCell.swift in Sources */,
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,
 				065D104C259B38BA008EB2CA /* Constants.swift in Sources */,

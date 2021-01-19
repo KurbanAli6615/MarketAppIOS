@@ -7,7 +7,7 @@
 
 import UIKit
 import NVActivityIndicatorView
-
+import EmptyDataSet_Swift
 
 class SearchViewController: UIViewController {
     
@@ -20,7 +20,7 @@ class SearchViewController: UIViewController {
     
     //    MARK: - Vars
     
-    let searchResults: [Item] = []
+    var searchResults: [Item] = []
     var activityIndicator: NVActivityIndicatorView?
     
     //    MARK: - View lifecycles
@@ -29,6 +29,9 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         tblView.tableFooterView = UIView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
+        
+        tblView.emptyDataSetSource = self
+        tblView.emptyDataSetDelegate = self
     }
     
     
@@ -45,7 +48,27 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchButtonPressed(_ sender: Any) {
-        
+        if searchTextField.text != ""{
+            
+            searchInFirebase(forName: searchTextField.text!)
+            emptyTextField()
+            animateSearchOption()
+            dismissKeyboard()
+        }
+    }
+//    MARK:- Search in database
+    
+    private func searchInFirebase(forName: String){
+        showLoadingIndicator()
+        searchAlgolia(searchString: forName) { (itemIds) in
+            downloadItems(itemIds) { (allItems) in
+                
+                self.searchResults = allItems
+                self.tblView.reloadData()
+                
+                self.hideLoadingIndicator()
+            }
+        }
     }
     
     //    MARK: - Halpers
@@ -110,7 +133,7 @@ class SearchViewController: UIViewController {
         self.navigationController?.pushViewController(itemVC, animated: true)
     }
     
-//    MARK:- Search From firestore
+    //    MARK:- Search From firestore
     
     private func searchItemFromFireStore(itemName: String) {
         
@@ -135,10 +158,38 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     //    MARK:- Table view delegate
-    
+     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         shoeItemView(withItem: searchResults[indexPath.row])
+    }
+}
+
+extension SearchViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No Items to display")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please check back later")
+    }
+    
+    func buttonImage(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> UIImage? {
+        return UIImage(named: "search")
+    }
+    
+    func buttonTitle(forEmptyDataSet scrollView: UIScrollView, for state: UIControl.State) -> NSAttributedString? {
+        return NSAttributedString(string: "Start Searching...")
+    }
+    
+    func emptyDataSet(_ scrollView: UIScrollView, didTapButton button: UIButton) {
+        showSearchField()
+        animateSearchOption()
     }
 }

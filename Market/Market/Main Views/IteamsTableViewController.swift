@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 class IteamsTableViewController: UITableViewController {
 
@@ -20,6 +21,9 @@ class IteamsTableViewController: UITableViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         self.title = category?.name
+        
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,8 +57,6 @@ class IteamsTableViewController: UITableViewController {
         showItemView(itemArray[indexPath.row])
     }
     
-    
-    
 //     MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -82,5 +84,19 @@ class IteamsTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+}
 
+extension IteamsTableViewController: EmptyDataSetSource, EmptyDataSetDelegate {
+    
+    func title(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "No Items to display")
+    }
+    
+    func image(forEmptyDataSet scrollView: UIScrollView) -> UIImage? {
+        return UIImage(named: "emptyData")
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView) -> NSAttributedString? {
+        return NSAttributedString(string: "Please check back later")
+    }
 }

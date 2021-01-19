@@ -50,7 +50,8 @@ class BasketViewController: UIViewController {
             
 //            addItemsToPurchaseHistory(self.purchaseItemIds)
 //            emptyTheBasket()
-            
+            addItemIdsToPurchaseHistoryVeriable()
+            showConfirmOrder()
         }else {
             self.hud.textLabel.text = "Please Complete Your Profile"
             self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
@@ -115,7 +116,14 @@ class BasketViewController: UIViewController {
         }
     }
     
+    private func addItemIdsToPurchaseHistoryVeriable(){
+        for i in allItems{
+            purchaseItemIds.append(i.id)
+        }
+    }
+    
     private func addItemsToPurchaseHistory(_ itemIds: [String]) {
+        
         if MUser.currentUser() != nil {
             let newItemIds = MUser.currentUser()!.purchaseItemIds + itemIds
             
@@ -134,6 +142,14 @@ class BasketViewController: UIViewController {
         itemVC.item = withItem
         
         self.navigationController?.pushViewController(itemVC, animated: true)
+    }
+    
+    private func showConfirmOrder(){
+        let confirmOrderVc = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "confirmOrder") as ConfirmOrderViewController
+        confirmOrderVc.items = allItems
+        confirmOrderVc.basket = basket
+        confirmOrderVc.purchaseItemIds = purchaseItemIds
+        self.navigationController?.pushViewController(confirmOrderVc, animated: true)
     }
     
     //    MARK:- Control check out button

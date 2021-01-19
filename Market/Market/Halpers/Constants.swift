@@ -11,12 +11,17 @@ import Foundation
 
 public let kFILEREFERENCE = "gs://market-76720.appspot.com"
 
+public let kALGOLIA_APP_ID = "YMANO2XPXT"
+public let kALGOLIA_SEARCH_KEY = "6dd6f85287b4d55a208e46dceadc4c17"
+public let kALGOLIA_ADMIN_KEY = "8fbffd34cbedd055184e6201d99a57d7"
+
+
 // FIrebase Headers
 public let kUSER_PATH = "User"
 public let kCATEGORY_PATH = "Category"
 public let kITEMS_PATH = "Items"
 public let kBASKET_PATH = "Basket"
-
+public let kORDER_PATH = "Order"
 
 // Category
 
@@ -36,6 +41,13 @@ public let kIMAGELINKS = "imageLinks"
 
 public let kOWNERID = "ownerID"
 public let kITEMIDS = "itemIds"
+
+// Order
+
+public let kORDERID = "orderId"
+public let kORDERTOTAL = "orderTotalAmount"
+public let kORDERITEMSIDS = "orderedItemsIds"
+public let kISDELIVERED = "isDelivered"
 
 // User
 

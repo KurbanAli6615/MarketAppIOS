@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import InstantSearchClient
 
 class Item {
     
@@ -16,8 +17,7 @@ class Item {
     var price: Double!
     var imageLinks: [String]!
     
-    init() {
-    }
+    init() {}
     
     init(_dictionary: NSDictionary) {
         
@@ -95,6 +95,50 @@ func downloadItems(_ withIDs: [String], complition: @escaping (_ itemArray: [Ite
         
     }else{
         complition(itemArray)
+    }
+}
+
+//  MARK:- Algolia func
+
+func saveItemToAlgolia(item: Item) {
+    
+    let index = AlgoliaService.shared.index
+    let itemToSave = itemDictionaryFrom(item) as! [String : Any]
+    
+    index.addObject(itemToSave, withID: item.id, requestOptions: nil) { (content, error) in
+        
+        if error != nil {
+            print("Error in save to algolia ",error?.localizedDescription)
+        }else{
+            print("Added to algolia")
+        }
+    }
+}
+
+func searchAlgolia(searchString: String, complition: @escaping(_ itemArray: [String])-> Void) {
+    
+    let index = AlgoliaService.shared.index
+    var resultIds: [String] = []
+    
+    let query = Query(query: searchString )
+    
+    query.attributesToRetrieve = ["name","description"]
+    
+    index.search(query) { (content, error) in
+        if error == nil {
+            let cont = content!["hits"] as! [[String : Any]]
+            
+            resultIds = []
+            
+            for result in cont{
+                resultIds.append(result["objectID"] as! String )
+            }
+            
+            complition(resultIds)
+        } else {
+            print("Error algolia search ",error!.localizedDescription)
+            complition(resultIds)
+        }
     }
 }
 

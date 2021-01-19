@@ -8,7 +8,6 @@
 import UIKit
 import JGProgressHUD
 
-
 class ItemViewController: UIViewController {
     
     //    MARK:- IBOutlets
