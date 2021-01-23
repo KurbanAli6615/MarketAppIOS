@@ -29,6 +29,7 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         //        Check login status
+       
         checkLoginStatus()
         checkOnBoardingStatus()
     }
@@ -52,6 +53,7 @@ class ProfileTableViewController: UITableViewController {
             createRightBarButton(title: "Login")
         }else {
             createRightBarButton(title: "Edit")
+            purchaseHistoryButtonOutlet.isEnabled = true
         }
     }
     
@@ -76,7 +78,7 @@ class ProfileTableViewController: UITableViewController {
             finishRegistrationButtonOutlet.isEnabled = false
             purchaseHistoryButtonOutlet.isEnabled = false
         }
-        purchaseHistoryButtonOutlet.isEnabled = true
+        
     }
     
 //  MARK:- IBActions

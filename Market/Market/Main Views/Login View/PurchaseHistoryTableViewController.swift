@@ -7,13 +7,15 @@
 
 import UIKit
 import EmptyDataSet_Swift
+import JGProgressHUD
 
 class PurchaseHistoryTableViewController: UITableViewController {
 
 //    MARK:- Vars
     
     var itemArray: [Item] = []
-    
+    let hud = JGProgressHUD(style: .dark)
+
 //    MARK:- view lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,8 +28,14 @@ class PurchaseHistoryTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        loadItems()
+        if MUser.currentUser() != nil {
+            loadItems()
+        }else {
+            hud.textLabel.text = "Please Complete Login First"
+            hud.indicatorView = JGProgressHUDErrorIndicatorView()
+            hud.show(in: self.view)
+            hud.dismiss(afterDelay: 2.0)
+        }
     }
 
     // MARK: - Table view data source
