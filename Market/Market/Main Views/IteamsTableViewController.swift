@@ -15,6 +15,9 @@ class IteamsTableViewController: UITableViewController {
     var category:Category?
     var itemArray: [Item] = []
     
+//    MARK:- IBOutlets
+    @IBOutlet weak var addItemButtonOutlet: UIBarButtonItem!
+    
 //    MARK:- Life cycles
     
     override func viewDidLoad() {
