@@ -31,6 +31,7 @@
 		06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3521259DA98A00250691 /* HaplerFunctions.swift */; };
 		06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3524259DC46B00250691 /* ItemViewController.swift */; };
 		06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AE3527259DCF9800250691 /* ImageCollectionViewCell.swift */; };
+		06C477EE25C5904E00014BA7 /* OrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C477ED25C5904E00014BA7 /* OrdersViewController.swift */; };
 		06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CBA367259B25A500DA2811 /* AppDelegate.swift */; };
 		06CBA36A259B25A500DA2811 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CBA369259B25A500DA2811 /* SceneDelegate.swift */; };
 		06CBA36F259B25A500DA2811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA36D259B25A500DA2811 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		06AE3521259DA98A00250691 /* HaplerFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HaplerFunctions.swift; sourceTree = "<group>"; };
 		06AE3524259DC46B00250691 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		06AE3527259DCF9800250691 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		06C477ED25C5904E00014BA7 /* OrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersViewController.swift; sourceTree = "<group>"; };
 		06CBA364259B25A500DA2811 /* Market.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Market.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06CBA367259B25A500DA2811 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06CBA369259B25A500DA2811 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
 				0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */,
 				068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */,
+				06C477ED25C5904E00014BA7 /* OrdersViewController.swift */,
 				06D248B325A86889002BC505 /* Login View */,
 			);
 			path = "Main Views";
@@ -330,6 +333,7 @@
 				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
 				06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */,
 				06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */,
+				06C477EE25C5904E00014BA7 /* OrdersViewController.swift in Sources */,
 				06DC8C3825B6D68F000C79CE /* Order.swift in Sources */,
 				06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */,
 				062B4E9A25B2E255009258BD /* AlgoliaService.swift in Sources */,
