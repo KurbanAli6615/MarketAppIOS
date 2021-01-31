@@ -54,12 +54,12 @@ class IteamsTableViewController: UITableViewController {
     
     
     //     MARK: - table view delegate
-
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         showItemView(itemArray[indexPath.row])
     }
-    
+
 //     MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

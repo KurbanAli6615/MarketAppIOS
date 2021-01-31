@@ -37,6 +37,8 @@
 		06CBA36F259B25A500DA2811 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA36D259B25A500DA2811 /* Main.storyboard */; };
 		06CBA371259B25A500DA2811 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA370259B25A500DA2811 /* Assets.xcassets */; };
 		06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06CBA372259B25A500DA2811 /* LaunchScreen.storyboard */; };
+		06CDDF8A25C69059006D8CEF /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06CDDF8825C69059006D8CEF /* OrderTableViewCell.swift */; };
+		06CDDF8B25C69059006D8CEF /* OrderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06CDDF8925C69059006D8CEF /* OrderTableViewCell.xib */; };
 		06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */; };
 		06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */; };
 		06DC8C3825B6D68F000C79CE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC8C3725B6D68F000C79CE /* Order.swift */; };
@@ -76,6 +78,8 @@
 		06CBA370259B25A500DA2811 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		06CBA373259B25A500DA2811 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06CBA375259B25A500DA2811 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06CDDF8825C69059006D8CEF /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
+		06CDDF8925C69059006D8CEF /* OrderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OrderTableViewCell.xib; sourceTree = "<group>"; };
 		06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		06DC8C3725B6D68F000C79CE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
@@ -114,6 +118,8 @@
 				065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */,
 				06AE3527259DCF9800250691 /* ImageCollectionViewCell.swift */,
 				06AE351E259DA36700250691 /* ItemTableViewCell.swift */,
+				06CDDF8825C69059006D8CEF /* OrderTableViewCell.swift */,
+				06CDDF8925C69059006D8CEF /* OrderTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -272,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */,
+				06CDDF8B25C69059006D8CEF /* OrderTableViewCell.xib in Resources */,
 				065D1036259B2E38008EB2CA /* GoogleService-Info.plist in Resources */,
 				06CBA371259B25A500DA2811 /* Assets.xcassets in Resources */,
 				06CBA36F259B25A500DA2811 /* Main.storyboard in Resources */,
@@ -333,6 +340,7 @@
 				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
 				06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */,
 				06AE3528259DCF9800250691 /* ImageCollectionViewCell.swift in Sources */,
+				06CDDF8A25C69059006D8CEF /* OrderTableViewCell.swift in Sources */,
 				06C477EE25C5904E00014BA7 /* OrdersViewController.swift in Sources */,
 				06DC8C3825B6D68F000C79CE /* Order.swift in Sources */,
 				06AE3525259DC46B00250691 /* ItemViewController.swift in Sources */,

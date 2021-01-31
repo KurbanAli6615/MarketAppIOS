@@ -177,7 +177,7 @@ extension ItemViewController: UICollectionViewDelegateFlowLayout{
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
-        let imgWidth = view.bounds.width 
+        let imgWidth: CGFloat = self.view.frame.width
         
         return CGSize(width: imgWidth, height: cellheight)
     }

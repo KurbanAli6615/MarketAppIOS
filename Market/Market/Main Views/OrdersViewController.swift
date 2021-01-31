@@ -8,18 +8,25 @@
 import UIKit
 
 class OrdersViewController: UIViewController {
-
-//    MARK:- Vars
+    
+    //    MARK:- Vars
     
     var orderArray: [Order] = []
     
-//    MARK:- IBoutlets
+    //    MARK:- IBoutlets
     @IBOutlet weak var tableView: UITableView!
     
-//    MARK:- View Life Cycles
+    //    MARK:- View Life Cycles
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
+        registerCell()
+    }
+    
+    func registerCell() {
+        let nibName = UINib(nibName: "OrderTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "OrderTableViewCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,18 +38,21 @@ class OrdersViewController: UIViewController {
         }
     }
     
-//  MARK:- Halpers
+    //  MARK:- Halpers
     
     func downloadOrder(){
         downloadFromOrders(MUser.currentId()) { (allOrders) in
             self.orderArray = allOrders
             print(self.orderArray.count)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
-//    MARK:- Functions for the download items from Order collection
+    //    MARK:- Functions for the download items from Order collection
     
-    private func downloadFromOrders(_ ownerID: String, complition: @escaping (_ itemArray: [Order])-> Void){
+    private func downloadFromOrders(_ ownerID: String, complition: @escaping (_ itemArray: [Order]) -> Void){
         
         var items: [Order] = []
         
@@ -58,18 +68,15 @@ class OrdersViewController: UIViewController {
 }
 
 // MARK:- Extension for the tableView Methods
-
 extension OrdersViewController: UITableViewDelegate, UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        return orderArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
-        
-            
-//        cell.generateCell(item!)
-
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "OrderTableViewCell", for: indexPath) as! OrderTableViewCell
+        cell.orderDetails = orderArray[indexPath.row]
+        return cell
     }
 }
