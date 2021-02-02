@@ -11,16 +11,16 @@ class CategoryCollectionViewController: UICollectionViewController {
 
 //    MARK:- Vars
     var categoryArray: [Category] = []
-    
   
     private let sectionInsets =  UIEdgeInsets(top: 20.0, left: 10.0, bottom: 20.0, right: 10.0)
     private let itemsPerRow:CGFloat = 3
     
 //    MARK:- View life cycles
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-          
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         loadCategories()
