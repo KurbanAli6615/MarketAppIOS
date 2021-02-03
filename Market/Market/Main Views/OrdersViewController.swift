@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import EmptyDataSet_Swift
 
 class OrdersViewController: UIViewController {
     
@@ -23,16 +24,19 @@ class OrdersViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         registerCell()
+        
     }
     
 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         if (MUser.currentUser() != nil){
             downloadOrder()
-            
         }else{
+            orderArray = []
+            tableView.reloadData()
             print("Please Login First")
         }
     }
@@ -122,4 +126,13 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let destinationVC = storyboard?.instantiateViewController(identifier: "OrderDetailsViewController") as! OrderDetailsViewController
+        
+        destinationVC.order = orderArray[indexPath.row]
+        
+        self.navigationController?.pushViewController(destinationVC, animated: true)
+    }
 }
+

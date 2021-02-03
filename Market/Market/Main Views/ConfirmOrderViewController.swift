@@ -36,10 +36,15 @@ class ConfirmOrderViewController: UIViewController {
             saveOrderToFirestore(order: order)
             addItemsToPurchaseHistory(purchaseItemIds)
             emptyTheBasket()
+            popViewController()
         }
     }
     
 //    MARK:- Halpers
+    
+    private func popViewController(){
+        self.navigationController?.popViewController(animated: true)
+    }
     
     private func orderTotal(item: [Item]) -> Double {
         var orderTotal: Double = 0
