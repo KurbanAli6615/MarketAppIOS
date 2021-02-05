@@ -39,6 +39,8 @@ class BasketViewController: UIViewController {
         if MUser.currentUser() != nil{
             loadBasketFromFirestore()
         }else {
+            allItems = []
+            self.tableView.reloadData()
             self.updateTotalLable(true)
         }
     }
@@ -48,8 +50,6 @@ class BasketViewController: UIViewController {
         
         if MUser.currentUser()!.onBoard {
             
-//            addItemsToPurchaseHistory(self.purchaseItemIds)
-//            emptyTheBasket()
             addItemIdsToPurchaseHistoryVeriable()
             showConfirmOrder()
         }else {

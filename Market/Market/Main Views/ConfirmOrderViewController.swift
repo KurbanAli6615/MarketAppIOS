@@ -9,8 +9,13 @@ import UIKit
 import JGProgressHUD
 
 class ConfirmOrderViewController: UIViewController {
-
-//    MARK:- Vars
+    
+//     MARK:- IBOutlets
+    
+    @IBOutlet weak var addressTextField: UILabel!
+    @IBOutlet weak var confirmOrderButtonOutlet: UIButton!
+    
+    //    MARK:- Vars
     
     var items: [Item] = []
     let hud: JGProgressHUD = JGProgressHUD(style: .dark)
@@ -20,11 +25,16 @@ class ConfirmOrderViewController: UIViewController {
 //    MARK:- ViewLife cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        setAddress()
     }
     
 //    MARK:- IBActions
     @IBAction func confirmOrderTapped(_ sender: Any) {
+        
         if MUser.currentUser() != nil {
            let order = Order()
             order.id = UUID().uuidString
@@ -41,6 +51,15 @@ class ConfirmOrderViewController: UIViewController {
     }
     
 //    MARK:- Halpers
+    
+    private func setAddress(){
+        if MUser.currentUser() != nil && MUser.currentUser()!.onBoard{
+            addressTextField.text = MUser.currentUser()!.fullAddess
+        } else {
+            addressTextField.text = "Please Finish Onbording first !"
+            confirmOrderButtonOutlet.isEnabled = false
+        }
+    }
     
     private func popViewController(){
         self.navigationController?.popViewController(animated: true)

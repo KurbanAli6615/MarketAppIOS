@@ -392,7 +392,7 @@
                                                     <constraint firstAttribute="height" constant="50" id="gu0-SF-OBL"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISX-KT-j1B">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cash on Delivery" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISX-KT-j1B">
                                                 <rect key="frame" x="70" y="10.000000000000014" width="290" height="236.33333333333337"/>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <nil key="textColor"/>
@@ -431,6 +431,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Confirm Order" id="4IC-hc-iaN"/>
+                    <connections>
+                        <outlet property="addressTextField" destination="gnd-GG-pdT" id="Atc-R0-BUQ"/>
+                        <outlet property="confirmOrderButtonOutlet" destination="UlY-67-sQR" id="efm-Xo-VQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsN-Wn-3zF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
