@@ -10,6 +10,7 @@
 		0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */; };
 		0609D3B9259C5264004F45F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B8259C5264004F45F1 /* Item.swift */; };
 		0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */; };
+		060F951D25D3BECD00ACD355 /* AdminLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060F951C25D3BECD00ACD355 /* AdminLoginViewController.swift */; };
 		062B4E9A25B2E255009258BD /* AlgoliaService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 062B4E9925B2E255009258BD /* AlgoliaService.swift */; };
 		0635BD8025AC4726004F7AF5 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */; };
 		063A54C225A6DA880003AE30 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063A54C125A6DA880003AE30 /* WelcomeViewController.swift */; };
@@ -50,6 +51,7 @@
 		0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteamsTableViewController.swift; sourceTree = "<group>"; };
 		0609D3B8259C5264004F45F1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		060F951C25D3BECD00ACD355 /* AdminLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLoginViewController.swift; sourceTree = "<group>"; };
 		062B4E9925B2E255009258BD /* AlgoliaService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlgoliaService.swift; sourceTree = "<group>"; };
 		0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		063A54C125A6DA880003AE30 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060F951B25D3BE9E00ACD355 /* Admin Views */ = {
+			isa = PBXGroup;
+			children = (
+				060F951C25D3BECD00ACD355 /* AdminLoginViewController.swift */,
+			);
+			path = "Admin Views";
+			sourceTree = "<group>";
+		};
 		065D103B259B3244008EB2CA /* Halpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +149,7 @@
 				068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */,
 				06C477ED25C5904E00014BA7 /* OrdersViewController.swift */,
 				063CAC9425CAAB0400ECF74E /* OrderDetailsViewController.swift */,
+				060F951B25D3BE9E00ACD355 /* Admin Views */,
 				06D248B325A86889002BC505 /* Login View */,
 			);
 			path = "Main Views";
@@ -363,6 +374,7 @@
 				0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */,
 				065D104C259B38BA008EB2CA /* Constants.swift in Sources */,
 				066900CA259C8B90004AF790 /* Downloder.swift in Sources */,
+				060F951D25D3BECD00ACD355 /* AdminLoginViewController.swift in Sources */,
 				066900C7259C8B27004AF790 /* Richability.swift in Sources */,
 				06CBA36A259B25A500DA2811 /* SceneDelegate.swift in Sources */,
 				065D1046259B32B4008EB2CA /* Category.swift in Sources */,

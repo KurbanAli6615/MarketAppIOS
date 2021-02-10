@@ -57,7 +57,7 @@ class WelcomeViewController: UIViewController {
         
     }
     @IBAction func adminLoginButtonPressed(_ sender: Any) {
-        print("Admin Login Pressed")
+        
     }
     
     @IBAction func registerButtonPressed(_ sender: Any) {

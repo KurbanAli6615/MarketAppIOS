@@ -120,23 +120,30 @@ extension OrderDetailsViewController: UITableViewDelegate, UITableViewDataSource
         80
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == UITableViewCell.EditingStyle.delete{
-            itemIdsInOrder.remove(at: indexPath.row)
-            
-            var orderTotal: Double = updateOrderTotal(index: indexPath.row)
-            
-            if (itemIdsInOrder.count == 0){
-                deleteOrder()
-            }else {
-                deleteItemFromOrderFromFirestore(withValues: [kORDERITEMSIDS : itemIdsInOrder, kORDERTOTAL : orderTotal]) { (error) in
-                    if error != nil {
-                        print("Error in updating Order", error!.localizedDescription)
-                    }
-                    self.downloadItems()
-                }
-            }
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//
+//        if editingStyle == UITableViewCell.EditingStyle.delete{
+//
+//            print("Item to delete is ",itemIdsInOrder[indexPath.row])
+//
+//            for (i,j) in itemIdsInOrder.enumerated(){
+//                print(i," ", j)
+//            }
+//
+//            itemIdsInOrder.remove(at: indexPath.row)
+//
+//            var orderTotal: Double = updateOrderTotal(index: indexPath.row)
+//
+//            if (itemIdsInOrder.count == 0){
+//                deleteOrder()
+//            }else {
+//                deleteItemFromOrderFromFirestore(withValues: [kORDERITEMSIDS : itemIdsInOrder, kORDERTOTAL : orderTotal]) { (error) in
+//                    if error != nil {
+//                        print("Error in updating Order", error!.localizedDescription)
+//                    }
+//                    self.downloadItems()
+//                }
+//            }
+//        }
+//    }
 }
