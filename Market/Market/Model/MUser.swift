@@ -19,7 +19,7 @@ class MUser{
     
     var fullAddess: String?
     var onBoard: Bool
-    
+    var isAdmin: Bool
     //    MARK:- init
     
     init(_objectId: String, _email: String, _firstName: String, _lastName: String) {
@@ -31,6 +31,7 @@ class MUser{
         fullAddess = ""
         purchaseItemIds = []
         onBoard = false
+        isAdmin = false
     }
     
     init(_dictionary: NSDictionary) {
@@ -72,6 +73,12 @@ class MUser{
             purchaseItemIds = purchasedIds as! [String]
         }else {
             purchaseItemIds = []
+        }
+        
+        if let isAd = _dictionary[kISADMIN] {
+            isAdmin = isAd as! Bool
+        }else {
+            isAdmin = false
         }
     }
     
@@ -194,7 +201,7 @@ func  saveUserLocally(mUserDictionary: NSDictionary) {
 
 func userDictionaryFrom(user: MUser) -> NSDictionary{
     
-    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullName ?? "", user.onBoard, user.purchaseItemIds], forKeys: [kOBJECTID as NSCopying, kEMAIL as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kFULLADDRESS as NSCopying, kONBOARD as NSCopying, kPURCHASEDITEMIDS as NSCopying])
+    return NSDictionary(objects: [user.objectId, user.email, user.firstName, user.lastName, user.fullName, user.fullName , user.onBoard, user.purchaseItemIds, user.isAdmin], forKeys: [kOBJECTID as NSCopying, kEMAIL as NSCopying, kFIRSTNAME as NSCopying, kLASTNAME as NSCopying, kFULLNAME as NSCopying, kFULLADDRESS as NSCopying, kONBOARD as NSCopying, kPURCHASEDITEMIDS as NSCopying, kISADMIN as NSCopying])
 }
 
 

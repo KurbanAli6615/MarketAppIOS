@@ -59,7 +59,7 @@ public let kCURRENTUSER = "currentUser"
 public let kFULLADDRESS = "fullAddess"
 public let kONBOARD = "onBoard"
 public let kPURCHASEDITEMIDS = "purchasedIteamIds"
-
+public let kISADMIN = "isAdmin"
 
 
 
