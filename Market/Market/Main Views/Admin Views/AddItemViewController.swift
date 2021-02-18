@@ -31,7 +31,7 @@ class AddItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(category.id)
+//        print(category.id)
     }
     
     override func viewDidAppear(_ animated: Bool) {

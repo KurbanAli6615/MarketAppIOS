@@ -18,6 +18,10 @@
 		063CAC9525CAAB0400ECF74E /* OrderDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 063CAC9425CAAB0400ECF74E /* OrderDetailsViewController.swift */; };
 		0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645730A25A8A42D00361347 /* EditProfileViewController.swift */; };
 		0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */; };
+		0647FA8B25DE5B6500318F35 /* AdminCategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0647FA8925DE5B6500318F35 /* AdminCategoryTableViewCell.swift */; };
+		0647FA8C25DE5B6500318F35 /* AdminCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */; };
+		0647FA8F25DE5CFB00318F35 /* AdminCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */; };
+		0647FA9225DE764800318F35 /* AdminItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0647FA9125DE764800318F35 /* AdminItemsViewController.swift */; };
 		065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */; };
 		065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */; };
 		065D1036259B2E38008EB2CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 065D1035259B2E38008EB2CA /* GoogleService-Info.plist */; };
@@ -59,6 +63,10 @@
 		063CAC9425CAAB0400ECF74E /* OrderDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailsViewController.swift; sourceTree = "<group>"; };
 		0645730A25A8A42D00361347 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		0645730D25A8B48800361347 /* PurchaseHistoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseHistoryTableViewController.swift; sourceTree = "<group>"; };
+		0647FA8925DE5B6500318F35 /* AdminCategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCategoryTableViewCell.swift; sourceTree = "<group>"; };
+		0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminCategoryTableViewCell.xib; sourceTree = "<group>"; };
+		0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCategoryViewController.swift; sourceTree = "<group>"; };
+		0647FA9125DE764800318F35 /* AdminItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminItemsViewController.swift; sourceTree = "<group>"; };
 		065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		065D1035259B2E38008EB2CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -108,6 +116,9 @@
 			isa = PBXGroup;
 			children = (
 				060F951C25D3BECD00ACD355 /* AdminLoginViewController.swift */,
+				0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */,
+				0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */,
+				0647FA9125DE764800318F35 /* AdminItemsViewController.swift */,
 			);
 			path = "Admin Views";
 			sourceTree = "<group>";
@@ -132,6 +143,8 @@
 				06AE351E259DA36700250691 /* ItemTableViewCell.swift */,
 				06CDDF8825C69059006D8CEF /* OrderTableViewCell.swift */,
 				06CDDF8925C69059006D8CEF /* OrderTableViewCell.xib */,
+				0647FA8925DE5B6500318F35 /* AdminCategoryTableViewCell.swift */,
+				0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -141,7 +154,6 @@
 			children = (
 				065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */,
 				0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */,
-				0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */,
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
 				06673E4C25A4654A004A457C /* BasketViewController.swift */,
 				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
@@ -149,8 +161,8 @@
 				068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */,
 				06C477ED25C5904E00014BA7 /* OrdersViewController.swift */,
 				063CAC9425CAAB0400ECF74E /* OrderDetailsViewController.swift */,
-				060F951B25D3BE9E00ACD355 /* Admin Views */,
 				06D248B325A86889002BC505 /* Login View */,
+				060F951B25D3BE9E00ACD355 /* Admin Views */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -292,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */,
+				0647FA8C25DE5B6500318F35 /* AdminCategoryTableViewCell.xib in Resources */,
 				06CDDF8B25C69059006D8CEF /* OrderTableViewCell.xib in Resources */,
 				065D1036259B2E38008EB2CA /* GoogleService-Info.plist in Resources */,
 				06CBA371259B25A500DA2811 /* Assets.xcassets in Resources */,
@@ -348,7 +361,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0647FA8B25DE5B6500318F35 /* AdminCategoryTableViewCell.swift in Sources */,
 				06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */,
+				0647FA8F25DE5CFB00318F35 /* AdminCategoryViewController.swift in Sources */,
 				06673E4D25A4654A004A457C /* BasketViewController.swift in Sources */,
 				065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */,
 				06AE3522259DA98A00250691 /* HaplerFunctions.swift in Sources */,
@@ -365,6 +380,7 @@
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
 				0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */,
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
+				0647FA9225DE764800318F35 /* AdminItemsViewController.swift in Sources */,
 				063CAC9525CAAB0400ECF74E /* OrderDetailsViewController.swift in Sources */,
 				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,

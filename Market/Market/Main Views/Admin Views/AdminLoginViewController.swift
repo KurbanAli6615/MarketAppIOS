@@ -33,7 +33,7 @@ class AdminLoginViewController: UIViewController {
         activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .circleStrokeSpin , color: #colorLiteral(red: 0.9100239873, green: 0.4986173511, blue: 0.4462146759, alpha: 1), padding: nil)
     }
     
-    //    MARK:- IBActions
+    //    MARK:- IBAtions
     
     @IBAction func cancelBarButtonPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
@@ -65,6 +65,7 @@ class AdminLoginViewController: UIViewController {
         self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
         self.hud.show(in: self.view)
         self.hud.dismiss(afterDelay: 2.0)
+        self.emailTextField.becomeFirstResponder()
     }
     
     //    MARK:- Activity indicator
@@ -106,7 +107,7 @@ class AdminLoginViewController: UIViewController {
                 if user.isAdmin == true {
                     // TODO: Admin Logged in
                     self.hideLoadingIndicator()
-                    self.showHudMessage(message: "Welcome Admin")
+                    self.performSegue(withIdentifier: "adminToAddItem", sender: self)
                 } else {
                     self.hideLoadingIndicator()
                     self.showHudMessage(message: "You are not admin")
