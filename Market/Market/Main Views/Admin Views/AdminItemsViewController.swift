@@ -22,7 +22,7 @@ class AdminItemsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(category!.id)
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -33,35 +33,30 @@ class AdminItemsViewController: UIViewController {
 //    MARK:- Halpers Functions
     
     func downloadItems(){
-        downloadItemsFromFirebase(withCategoryId: category!.id) { (allItems) in
+        downloadItemsFromFirebase(withCaegoryId: category!.id) { (allItems) in
             self.allItemsInCategory = allItems
-            print(allItems.count)
             self.tableView.reloadData()
         }
     }
     
-    func downloadItemsFromFirebase(withCategoryId: String, compliton: @escaping(_ allItems: [Item])-> Void){
+//    MARK:- Navigations
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addItemSeg" {
+            let vc = segue.destination as! AddItemViewController
+            vc.category = self.category
+        }
         
-        print(withCategoryId)
-        FirebaseReference(.Items).whereField(kCATEGORYID, isEqualTo: withCategoryId).getDocuments { (snapshot, error) in
-            if error == nil {
-                var allItems:[Item] = []
-                
-                for item in snapshot!.documents{
-                    allItems.append(Item.init(_dictionary: item.data() as NSDictionary))
-                }
-                print(snapshot!.count)
-                compliton(allItems)
-            }else {
-                print("Error in download items",error!.localizedDescription)
-            }
-           
+        if segue.identifier == "itemsToUpdateItem" {
+            let vc = segue.destination as! AdminUpdateItemViewController
+            vc.item = sender as! Item
         }
     }
-
 }
 
-extension AdminItemsViewController: UITableViewDataSource, UITableViewDelegate{
+
+extension AdminItemsViewController: UITableViewDataSource, UITableViewDelegate {
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         allItemsInCategory.count
     }
@@ -74,6 +69,13 @@ extension AdminItemsViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        80
+    }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "itemsToUpdateItem", sender: allItemsInCategory[indexPath.row])
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 

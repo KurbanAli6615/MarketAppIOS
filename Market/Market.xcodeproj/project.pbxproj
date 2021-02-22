@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060577D725E3C9A700F5BA94 /* AdminUpdateItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060577D625E3C9A700F5BA94 /* AdminUpdateItemViewController.swift */; };
+		060577DE25E3D69700F5BA94 /* AdminLogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */; };
 		0609D3B6259C50DF004F45F1 /* IteamsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */; };
 		0609D3B9259C5264004F45F1 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3B8259C5264004F45F1 /* Item.swift */; };
 		0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */; };
@@ -52,6 +54,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		060577D625E3C9A700F5BA94 /* AdminUpdateItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminUpdateItemViewController.swift; sourceTree = "<group>"; };
+		060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminLogoutViewController.swift; sourceTree = "<group>"; };
 		0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IteamsTableViewController.swift; sourceTree = "<group>"; };
 		0609D3B8259C5264004F45F1 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
@@ -119,6 +123,8 @@
 				0609D3BB259C5A26004F45F1 /* AddItemViewController.swift */,
 				0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */,
 				0647FA9125DE764800318F35 /* AdminItemsViewController.swift */,
+				060577D625E3C9A700F5BA94 /* AdminUpdateItemViewController.swift */,
+				060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */,
 			);
 			path = "Admin Views";
 			sourceTree = "<group>";
@@ -377,10 +383,12 @@
 				0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */,
 				0609D3B9259C5264004F45F1 /* Item.swift in Sources */,
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
+				060577DE25E3D69700F5BA94 /* AdminLogoutViewController.swift in Sources */,
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
 				0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */,
 				065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */,
 				0647FA9225DE764800318F35 /* AdminItemsViewController.swift in Sources */,
+				060577D725E3C9A700F5BA94 /* AdminUpdateItemViewController.swift in Sources */,
 				063CAC9525CAAB0400ECF74E /* OrderDetailsViewController.swift in Sources */,
 				06673E4A25A43FF0004A457C /* Basket.swift in Sources */,
 				0609D3BC259C5A26004F45F1 /* AddItemViewController.swift in Sources */,

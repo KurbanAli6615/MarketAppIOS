@@ -627,7 +627,7 @@
             </objects>
             <point key="canvasLocation" x="7852.3076923076924" y="-1071.3270142180095"/>
         </scene>
-        <!--Add Item-->
+        <!--Items-->
         <scene sceneID="L1f-vK-iua">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="cqb-Z6-XwY" customClass="AdminItemsViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
@@ -717,20 +717,81 @@
                             <constraint firstItem="93j-KO-M7E" firstAttribute="trailing" secondItem="i8b-D6-pgZ" secondAttribute="trailing" id="daL-4c-JHW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Add Item" id="VaG-5Q-ARs">
+                    <navigationItem key="navigationItem" title="Items" id="VaG-5Q-ARs">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="875-J1-PIr">
                             <connections>
-                                <segue destination="f3q-Kr-B6M" kind="show" id="fOh-cq-9bb"/>
+                                <segue destination="f3q-Kr-B6M" kind="show" identifier="addItemSeg" id="fOh-cq-9bb"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="i8b-D6-pgZ" id="w0U-Nc-6Ov"/>
+                        <segue destination="HD2-Mk-5QJ" kind="show" identifier="itemsToUpdateItem" id="aqr-jg-Wvd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fS-T1-yd5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8653.8461538461543" y="-1071.3270142180095"/>
+        </scene>
+        <!--Update Item-->
+        <scene sceneID="cyM-zu-XeP">
+            <objects>
+                <viewController id="HD2-Mk-5QJ" customClass="AdminUpdateItemViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fJr-JF-l15">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Price" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Adq-9K-XgD">
+                                <rect key="frame" x="20" y="139" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AYA-n1-f3Q">
+                                <rect key="frame" x="20" y="213" width="350" height="130"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="130" id="cig-ar-tI1"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Bg-ch-Prr">
+                                <rect key="frame" x="20" y="85" width="350" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="BoC-5o-EXF"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="Adq-9K-XgD" secondAttribute="trailing" constant="20" id="8Yh-Lf-4vw"/>
+                            <constraint firstItem="AYA-n1-f3Q" firstAttribute="leading" secondItem="BoC-5o-EXF" secondAttribute="leading" constant="20" id="RIj-Yf-j5A"/>
+                            <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="AYA-n1-f3Q" secondAttribute="trailing" constant="20" id="TVI-3A-FkR"/>
+                            <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="9Bg-ch-Prr" secondAttribute="trailing" constant="20" id="a3a-Wp-srp"/>
+                            <constraint firstItem="Adq-9K-XgD" firstAttribute="leading" secondItem="BoC-5o-EXF" secondAttribute="leading" constant="20" id="lXJ-iO-8fo"/>
+                            <constraint firstItem="Adq-9K-XgD" firstAttribute="top" secondItem="9Bg-ch-Prr" secondAttribute="bottom" constant="20" id="oZ8-D0-pNu"/>
+                            <constraint firstItem="AYA-n1-f3Q" firstAttribute="top" secondItem="Adq-9K-XgD" secondAttribute="bottom" constant="40" id="rZe-3s-ozg"/>
+                            <constraint firstItem="9Bg-ch-Prr" firstAttribute="top" secondItem="BoC-5o-EXF" secondAttribute="top" constant="29" id="zgz-yn-OQJ"/>
+                            <constraint firstItem="9Bg-ch-Prr" firstAttribute="leading" secondItem="BoC-5o-EXF" secondAttribute="leading" constant="20" id="zlf-wL-fCo"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Update Item" id="JLe-dw-E3y">
+                        <barButtonItem key="rightBarButtonItem" title="Update" id="yHe-Fz-3gB">
+                            <connections>
+                                <action selector="updateButtonTapped:" destination="HD2-Mk-5QJ" id="zao-DR-nRD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="itemDescription" destination="AYA-n1-f3Q" id="dB0-Mm-ut8"/>
+                        <outlet property="itemName" destination="9Bg-ch-Prr" id="2ol-d6-Nmp"/>
+                        <outlet property="itemPrice" destination="Adq-9K-XgD" id="p2K-bS-Hpr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SOF-Xn-wKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9564.6153846153848" y="-761.37440758293837"/>
         </scene>
         <!--Add Item-->
         <scene sceneID="xus-rN-rkI">
@@ -809,7 +870,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="9550.7692307692305" y="-1071.3270142180095"/>
+            <point key="canvasLocation" x="9566" y="-1441"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="cjI-7L-iTv">
@@ -824,6 +885,7 @@
                     <connections>
                         <segue destination="unm-4v-JxO" kind="relationship" relationship="viewControllers" id="ex4-tF-l5g"/>
                         <segue destination="H6F-45-HBA" kind="relationship" relationship="viewControllers" id="4Ch-P8-iDZ"/>
+                        <segue destination="9oy-Qt-fb4" kind="relationship" relationship="viewControllers" id="CgX-47-GbD"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ah9-DM-YRD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -844,7 +906,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4w-Ql-qmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7726.1538461538457" y="-311.37440758293837"/>
+            <point key="canvasLocation" x="7726" y="-375"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="8S2-h0-1Xh">
@@ -1787,7 +1849,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hac-9x-O76" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6796.9230769230771" y="-311.37440758293837"/>
+            <point key="canvasLocation" x="6922" y="-374"/>
         </scene>
         <!--Manage Items-->
         <scene sceneID="wdD-3H-dIT">
@@ -1808,9 +1870,27 @@
             </objects>
             <point key="canvasLocation" x="6921.538461538461" y="-1071.3270142180095"/>
         </scene>
+        <!--Logout-->
+        <scene sceneID="37h-Hc-gDI">
+            <objects>
+                <viewController id="9oy-Qt-fb4" customClass="AdminLogoutViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZuO-Ls-FUX">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="LT3-HV-qO8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Logout" image="arrowshape.turn.up.right.circle.fill" catalog="system" id="Xye-vS-mlx"/>
+                    <navigationItem key="navigationItem" id="6GI-VS-Vn4" customClass="Logout"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVc-8W-njf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6922" y="428"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddItem" width="26" height="26"/>
+        <image name="arrowshape.turn.up.right.circle.fill" catalog="system" width="128" height="121"/>
         <image name="basket" width="30" height="30"/>
         <image name="checkBox" width="64" height="64"/>
         <image name="homeIcon" width="30" height="30"/>
