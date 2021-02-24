@@ -1243,6 +1243,7 @@
                     <navigationItem key="navigationItem" id="Msb-Fz-6qr"/>
                     <connections>
                         <outlet property="emailTextField" destination="drJ-FP-Pnc" id="XQV-mV-m2b"/>
+                        <outlet property="loginButtonOutlet" destination="Kyi-Qh-Mp4" id="76s-cw-kva"/>
                         <outlet property="passwordTextField" destination="UBs-5v-d07" id="pRc-0Z-Cms"/>
                         <segue destination="ULJ-kR-2Kx" kind="show" identifier="adminToAddItem" id="VsI-Lj-zy2"/>
                     </connections>

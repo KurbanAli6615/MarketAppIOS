@@ -175,6 +175,7 @@ class WelcomeViewController: UIViewController {
         if activityIndicator != nil {
             self.view.addSubview(activityIndicator!)
             activityIndicator?.startAnimating()
+            self.view.isUserInteractionEnabled = false
         }
     }
     
@@ -182,6 +183,7 @@ class WelcomeViewController: UIViewController {
         if activityIndicator != nil {
             activityIndicator!.removeFromSuperview()
             activityIndicator!.stopAnimating()
+            self.view.isUserInteractionEnabled = true
         }
     }
 }

@@ -21,11 +21,13 @@ class AdminLoginViewController: UIViewController {
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var loginButtonOutlet: UIButton!
     
     //    MARK:- ViewLife Cycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -77,6 +79,7 @@ class AdminLoginViewController: UIViewController {
         if activityIndicator != nil {
             self.view.addSubview(activityIndicator!)
             activityIndicator?.startAnimating()
+            self.view.isUserInteractionEnabled = false
         }
     }
     
@@ -84,6 +87,7 @@ class AdminLoginViewController: UIViewController {
         if activityIndicator != nil {
             activityIndicator!.removeFromSuperview()
             activityIndicator!.stopAnimating()
+            self.view.isUserInteractionEnabled = true
         }
     }
     //    MARK:- Admin Login Functions

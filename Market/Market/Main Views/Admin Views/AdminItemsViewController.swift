@@ -39,6 +39,14 @@ class AdminItemsViewController: UIViewController {
         }
     }
     
+    func deleteItemFromFirebase(item: Item) {
+        FirebaseReference(.Items).document(item.id).delete{ (error) in
+            if error == nil {
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
 //    MARK:- Navigations
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -76,6 +84,14 @@ extension AdminItemsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         performSegue(withIdentifier: "itemsToUpdateItem", sender: allItemsInCategory[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            allItemsInCategory.remove(at: indexPath.row)
+            deleteItemFromFirebase(item: allItemsInCategory[indexPath.row])
+        }
     }
 }
 
