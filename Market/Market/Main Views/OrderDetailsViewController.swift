@@ -34,6 +34,7 @@ class OrderDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        checkOrderIsDelivered()
         itemIdsInOrder = []
         createArrayOfItems()
         downloadItems()
@@ -53,6 +54,13 @@ class OrderDetailsViewController: UIViewController {
     
     
     //    MARK:- Haplers
+    
+    func checkOrderIsDelivered(){
+        if order!.isDelivered == true {
+            self.navigationItem.rightBarButtonItem = nil
+        }
+    }
+    
     func createArrayOfItems(){
         for item in order!.orderedItemsIds {
             itemIdsInOrder.append(item)

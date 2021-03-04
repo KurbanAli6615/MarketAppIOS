@@ -895,18 +895,82 @@
         <!--Manage Orders-->
         <scene sceneID="BmI-OJ-heU">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="vp3-ht-nyj" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="vp3-ht-nyj" customClass="AdminManageOrdersViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lQ4-vo-bEP">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZhW-5h-lDn">
+                                <rect key="frame" x="0.0" y="56" width="390" height="651"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="HuC-iw-RJL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="HuC-iw-RJL" firstAttribute="trailing" secondItem="ZhW-5h-lDn" secondAttribute="trailing" id="Gw5-kL-G8T"/>
+                            <constraint firstItem="ZhW-5h-lDn" firstAttribute="top" secondItem="HuC-iw-RJL" secondAttribute="top" id="Jbi-dZ-66l"/>
+                            <constraint firstItem="HuC-iw-RJL" firstAttribute="bottom" secondItem="ZhW-5h-lDn" secondAttribute="bottom" id="LXb-gz-No6"/>
+                            <constraint firstItem="ZhW-5h-lDn" firstAttribute="leading" secondItem="HuC-iw-RJL" secondAttribute="leading" id="viY-db-7wv"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Manage Orders" id="dFG-KO-hm2"/>
+                    <connections>
+                        <outlet property="tableView" destination="ZhW-5h-lDn" id="qVP-PY-mjD"/>
+                        <segue destination="nG5-5U-GGR" kind="show" identifier="ordersToOrder" id="o89-hq-9Dz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n4w-Ql-qmY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7726" y="-375"/>
+        </scene>
+        <!--Admin Order View Controller-->
+        <scene sceneID="Fac-BB-z3g">
+            <objects>
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="nG5-5U-GGR" customClass="AdminOrderViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gmZ-9Q-ygF">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Order Owner Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ny-07-bcP">
+                                <rect key="frame" x="20" y="66" width="350" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="75p-2G-iph">
+                                <rect key="frame" x="20" y="665" width="350" height="32"/>
+                                <color key="backgroundColor" red="0.25588453820000001" green="0.6808411593" blue="0.3704441403" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Set Delivery Status as Delivered">
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="deliveryStatusButtonTapped:" destination="nG5-5U-GGR" eventType="touchUpInside" id="kbi-Bi-BJQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wrv-bq-34S"/>
+                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                        <constraints>
+                            <constraint firstItem="75p-2G-iph" firstAttribute="leading" secondItem="wrv-bq-34S" secondAttribute="leading" constant="20" id="BT5-1F-Ngq"/>
+                            <constraint firstItem="wrv-bq-34S" firstAttribute="trailing" secondItem="75p-2G-iph" secondAttribute="trailing" constant="20" id="TW8-nG-8C0"/>
+                            <constraint firstItem="8Ny-07-bcP" firstAttribute="leading" secondItem="wrv-bq-34S" secondAttribute="leading" constant="20" id="UTh-sa-0AF"/>
+                            <constraint firstItem="8Ny-07-bcP" firstAttribute="top" secondItem="wrv-bq-34S" secondAttribute="top" constant="10" id="pdc-td-Oxi"/>
+                            <constraint firstItem="wrv-bq-34S" firstAttribute="bottom" secondItem="75p-2G-iph" secondAttribute="bottom" constant="10" id="qaZ-C2-Ly1"/>
+                            <constraint firstItem="wrv-bq-34S" firstAttribute="trailing" secondItem="8Ny-07-bcP" secondAttribute="trailing" constant="20" id="twr-9q-Rxy"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="SMF-yi-x0j"/>
+                    <connections>
+                        <outlet property="deliveryStatusButtonOutlet" destination="75p-2G-iph" id="onm-ex-qva"/>
+                        <outlet property="ownerNameLabel" destination="8Ny-07-bcP" id="9oe-Wr-abJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HqX-I4-96J" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8621.538461538461" y="-375.35545023696682"/>
         </scene>
         <!--Item View Controller-->
         <scene sceneID="8S2-h0-1Xh">
@@ -1122,11 +1186,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bx-uP-flC">
-                                <rect key="frame" x="125" y="780" width="140" height="30"/>
+                                <rect key="frame" x="125" y="794" width="140" height="30"/>
                                 <color key="backgroundColor" red="0.85486215350000005" green="0.51881921289999999" blue="0.46664333340000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="M2j-ew-eG4"/>
-                                    <constraint firstAttribute="width" constant="140" id="bd7-wL-sgY"/>
+                                    <constraint firstAttribute="width" constant="140" id="8iO-4b-w0x"/>
+                                    <constraint firstAttribute="height" constant="30" id="K0e-kB-DzI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Admin Login">
@@ -1143,19 +1207,19 @@
                         <constraints>
                             <constraint firstItem="Zfa-8c-duM" firstAttribute="top" secondItem="igA-pL-CO2" secondAttribute="bottom" constant="17" id="0bJ-99-0SK"/>
                             <constraint firstItem="Thk-lQ-7iK" firstAttribute="top" secondItem="0qK-r1-9vr" secondAttribute="bottom" constant="8" id="252-XW-eZR"/>
-                            <constraint firstItem="4Bx-uP-flC" firstAttribute="centerX" secondItem="BIE-Uo-tCk" secondAttribute="centerX" id="2Wb-No-T3J"/>
                             <constraint firstItem="DCF-XU-hIF" firstAttribute="leading" secondItem="VXU-cv-tIi" secondAttribute="leading" constant="16" id="AFu-fW-pcO"/>
                             <constraint firstItem="Thk-lQ-7iK" firstAttribute="centerY" secondItem="BIE-Uo-tCk" secondAttribute="centerY" id="DRP-z0-ctb"/>
                             <constraint firstItem="0qK-r1-9vr" firstAttribute="centerX" secondItem="BIE-Uo-tCk" secondAttribute="centerX" id="G0x-4u-s2B"/>
-                            <constraint firstItem="4Bx-uP-flC" firstAttribute="bottom" secondItem="VXU-cv-tIi" secondAttribute="bottom" id="HNK-ec-k4w"/>
                             <constraint firstItem="BjG-aq-2TA" firstAttribute="leading" secondItem="VXU-cv-tIi" secondAttribute="leading" constant="16" id="KGN-2g-uaS"/>
                             <constraint firstItem="Thk-lQ-7iK" firstAttribute="centerX" secondItem="BIE-Uo-tCk" secondAttribute="centerX" id="Oz9-cf-sPc"/>
                             <constraint firstItem="igA-pL-CO2" firstAttribute="top" secondItem="DCF-XU-hIF" secondAttribute="bottom" constant="8" symbolic="YES" id="Wkd-Hi-lTU"/>
                             <constraint firstItem="Arp-k4-18T" firstAttribute="top" secondItem="VXU-cv-tIi" secondAttribute="top" id="XRW-5D-DRe"/>
                             <constraint firstItem="Arp-k4-18T" firstAttribute="leading" secondItem="VXU-cv-tIi" secondAttribute="leading" constant="16" id="ZjS-8Y-Aws"/>
                             <constraint firstItem="DCF-XU-hIF" firstAttribute="top" secondItem="X9H-Jm-S2c" secondAttribute="bottom" constant="28" id="dfB-MX-124"/>
+                            <constraint firstItem="4Bx-uP-flC" firstAttribute="centerX" secondItem="BIE-Uo-tCk" secondAttribute="centerX" id="fBR-2K-f0j"/>
                             <constraint firstItem="X9H-Jm-S2c" firstAttribute="top" secondItem="VXU-cv-tIi" secondAttribute="top" id="fSa-rL-uIY"/>
                             <constraint firstItem="VXU-cv-tIi" firstAttribute="trailing" secondItem="Zfa-8c-duM" secondAttribute="trailing" constant="16" id="g7F-6N-7ic"/>
+                            <constraint firstAttribute="bottom" secondItem="4Bx-uP-flC" secondAttribute="bottom" constant="20" id="mLH-Cr-Mui"/>
                             <constraint firstItem="VXU-cv-tIi" firstAttribute="trailing" secondItem="DCF-XU-hIF" secondAttribute="trailing" constant="16" id="naf-G4-MqY"/>
                             <constraint firstItem="X9H-Jm-S2c" firstAttribute="leading" secondItem="VXU-cv-tIi" secondAttribute="leading" constant="16" id="q0X-CT-Kc5"/>
                             <constraint firstItem="igA-pL-CO2" firstAttribute="leading" secondItem="VXU-cv-tIi" secondAttribute="leading" constant="16" id="qQq-k8-ih6"/>

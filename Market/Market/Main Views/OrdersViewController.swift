@@ -7,13 +7,14 @@
 
 import UIKit
 import EmptyDataSet_Swift
-
+import JGProgressHUD
 class OrdersViewController: UIViewController {
     
     //    MARK:- Vars
     
     var orderArray: [Order] = []
     var itemInCurrentOrder: [Item] = []
+    let hud = JGProgressHUD(style: .dark)
 
     //    MARK:- IBoutlets
     
@@ -128,11 +129,19 @@ extension OrdersViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+//        if orderArray[indexPath.row].isDelivered ==  true {
+//            self.hud.textLabel.text = "This Order is Already Delivered"
+//            self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+//            self.hud.show(in: self.view)
+//            self.hud.dismiss(afterDelay: 2.0)
+//        } else {
         let destinationVC = storyboard?.instantiateViewController(identifier: "OrderDetailsViewController") as! OrderDetailsViewController
         
         destinationVC.order = orderArray[indexPath.row]
         
         self.navigationController?.pushViewController(destinationVC, animated: true)
+//        }
     }
 }
 

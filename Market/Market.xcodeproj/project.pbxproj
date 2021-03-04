@@ -24,6 +24,7 @@
 		0647FA8C25DE5B6500318F35 /* AdminCategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */; };
 		0647FA8F25DE5CFB00318F35 /* AdminCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */; };
 		0647FA9225DE764800318F35 /* AdminItemsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0647FA9125DE764800318F35 /* AdminItemsViewController.swift */; };
+		064ACD0825F0E66D003E689A /* AdminOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064ACD0725F0E66D003E689A /* AdminOrderViewController.swift */; };
 		065D102D259B2C28008EB2CA /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */; };
 		065D1030259B2C9B008EB2CA /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */; };
 		065D1036259B2E38008EB2CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 065D1035259B2E38008EB2CA /* GoogleService-Info.plist */; };
@@ -50,6 +51,9 @@
 		06D248AE25A85B6F002BC505 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */; };
 		06D248B125A86867002BC505 /* FinishRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */; };
 		06DC8C3825B6D68F000C79CE /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06DC8C3725B6D68F000C79CE /* Order.swift */; };
+		06E7EDBA25ECB75700086077 /* AdminOrdersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7EDB825ECB75700086077 /* AdminOrdersTableViewCell.swift */; };
+		06E7EDBB25ECB75700086077 /* AdminOrdersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 06E7EDB925ECB75700086077 /* AdminOrdersTableViewCell.xib */; };
+		06E7EDBF25ECBC7200086077 /* AdminManageOrdersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06E7EDBE25ECBC7200086077 /* AdminManageOrdersViewController.swift */; };
 		A4BF8924A6A22E640CA77629 /* Pods_Market.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F573C43ADD01D8697E01CFDA /* Pods_Market.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +75,7 @@
 		0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminCategoryTableViewCell.xib; sourceTree = "<group>"; };
 		0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminCategoryViewController.swift; sourceTree = "<group>"; };
 		0647FA9125DE764800318F35 /* AdminItemsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminItemsViewController.swift; sourceTree = "<group>"; };
+		064ACD0725F0E66D003E689A /* AdminOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrderViewController.swift; sourceTree = "<group>"; };
 		065D102C259B2C28008EB2CA /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
 		065D102F259B2C9B008EB2CA /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		065D1035259B2E38008EB2CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -99,6 +104,9 @@
 		06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
 		06D248B025A86867002BC505 /* FinishRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishRegistrationViewController.swift; sourceTree = "<group>"; };
 		06DC8C3725B6D68F000C79CE /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
+		06E7EDB825ECB75700086077 /* AdminOrdersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminOrdersTableViewCell.swift; sourceTree = "<group>"; };
+		06E7EDB925ECB75700086077 /* AdminOrdersTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AdminOrdersTableViewCell.xib; sourceTree = "<group>"; };
+		06E7EDBE25ECBC7200086077 /* AdminManageOrdersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminManageOrdersViewController.swift; sourceTree = "<group>"; };
 		3D264033C5D858A6BD39BE4F /* Pods-Market.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.debug.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.debug.xcconfig"; sourceTree = "<group>"; };
 		A94E09B205827037592CE4FC /* Pods-Market.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Market.release.xcconfig"; path = "Target Support Files/Pods-Market/Pods-Market.release.xcconfig"; sourceTree = "<group>"; };
 		F573C43ADD01D8697E01CFDA /* Pods_Market.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Market.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +133,8 @@
 				0647FA9125DE764800318F35 /* AdminItemsViewController.swift */,
 				060577D625E3C9A700F5BA94 /* AdminUpdateItemViewController.swift */,
 				060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */,
+				06E7EDBE25ECBC7200086077 /* AdminManageOrdersViewController.swift */,
+				064ACD0725F0E66D003E689A /* AdminOrderViewController.swift */,
 			);
 			path = "Admin Views";
 			sourceTree = "<group>";
@@ -151,6 +161,8 @@
 				06CDDF8925C69059006D8CEF /* OrderTableViewCell.xib */,
 				0647FA8925DE5B6500318F35 /* AdminCategoryTableViewCell.swift */,
 				0647FA8A25DE5B6500318F35 /* AdminCategoryTableViewCell.xib */,
+				06E7EDB825ECB75700086077 /* AdminOrdersTableViewCell.swift */,
+				06E7EDB925ECB75700086077 /* AdminOrdersTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -309,6 +321,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06E7EDBB25ECB75700086077 /* AdminOrdersTableViewCell.xib in Resources */,
 				06CBA374259B25A500DA2811 /* LaunchScreen.storyboard in Resources */,
 				0647FA8C25DE5B6500318F35 /* AdminCategoryTableViewCell.xib in Resources */,
 				06CDDF8B25C69059006D8CEF /* OrderTableViewCell.xib in Resources */,
@@ -383,6 +396,7 @@
 				0645730E25A8B48900361347 /* PurchaseHistoryTableViewController.swift in Sources */,
 				0609D3B9259C5264004F45F1 /* Item.swift in Sources */,
 				065D1039259B2F2A008EB2CA /* FirebaseCollectionRefrences.swift in Sources */,
+				06E7EDBA25ECB75700086077 /* AdminOrdersTableViewCell.swift in Sources */,
 				060577DE25E3D69700F5BA94 /* AdminLogoutViewController.swift in Sources */,
 				06CBA368259B25A500DA2811 /* AppDelegate.swift in Sources */,
 				0645730B25A8A42D00361347 /* EditProfileViewController.swift in Sources */,
@@ -403,6 +417,8 @@
 				06CBA36A259B25A500DA2811 /* SceneDelegate.swift in Sources */,
 				065D1046259B32B4008EB2CA /* Category.swift in Sources */,
 				063A54C525A6DE5E0003AE30 /* MUser.swift in Sources */,
+				064ACD0825F0E66D003E689A /* AdminOrderViewController.swift in Sources */,
+				06E7EDBF25ECBC7200086077 /* AdminManageOrdersViewController.swift in Sources */,
 				063A54C225A6DA880003AE30 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

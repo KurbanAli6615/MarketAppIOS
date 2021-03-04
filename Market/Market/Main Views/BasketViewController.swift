@@ -73,6 +73,7 @@ class BasketViewController: UIViewController {
             downloadItems(basket!.itemIds) { (allItems) in
                 self.allItems = allItems
                 self.updateTotalLable(false)
+                print("Items in Basket --> ", allItems.count)
                 self.tableView.reloadData()
             }
         }

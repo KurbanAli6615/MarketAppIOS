@@ -27,6 +27,8 @@ class AdminItemsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        allItemsInCategory = []
+        tableView.reloadData()
         downloadItems()
     }
     
@@ -86,12 +88,12 @@ extension AdminItemsViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        
-        if editingStyle == .delete {
-            allItemsInCategory.remove(at: indexPath.row)
-            deleteItemFromFirebase(item: allItemsInCategory[indexPath.row])
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+//        
+//        if editingStyle == .delete {
+//            deleteItemFromFirebase(item: allItemsInCategory[indexPath.row])
+//            allItemsInCategory.remove(at: indexPath.row)
+//        }
+//    }
 }
 
