@@ -31,11 +31,14 @@ class BasketViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = footerView
+        tableView.tableFooterView = UIView()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        checkOutButtonOutlet.layer.cornerRadius = 18
+
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         if MUser.currentUser() != nil{
             loadBasketFromFirestore()
         }else {
@@ -99,7 +102,7 @@ class BasketViewController: UIViewController {
         for item in allItems{
             totalPrice += item.price
         }
-        return "Total Price : " + convertToCurrency(totalPrice)
+        return "Total : " + convertToCurrency(totalPrice)
     }
     
     private func emptyTheBasket(){
@@ -159,7 +162,7 @@ class BasketViewController: UIViewController {
         self.checkOutButtonOutlet.isEnabled = allItems.count > 0
         
         if checkOutButtonOutlet.isEnabled{
-            checkOutButtonOutlet.backgroundColor = #colorLiteral(red: 0.9157105684, green: 0.5526917577, blue: 0.5250652432, alpha: 1)
+            checkOutButtonOutlet.backgroundColor = #colorLiteral(red: 0, green: 0.605456233, blue: 0, alpha: 1)
         }else {
             disableCheoutButton()
         }

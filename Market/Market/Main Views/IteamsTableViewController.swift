@@ -22,6 +22,7 @@ class IteamsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = #colorLiteral(red: 0.9493632913, green: 0.9486636519, blue: 0.9704381824, alpha: 1)
         tableView.tableFooterView = UIView()
         self.title = category?.name
         
@@ -31,7 +32,7 @@ class IteamsTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         if category != nil {
             loadItems()
         }

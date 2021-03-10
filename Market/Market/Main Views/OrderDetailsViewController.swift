@@ -34,6 +34,7 @@ class OrderDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         checkOrderIsDelivered()
         itemIdsInOrder = []
         createArrayOfItems()

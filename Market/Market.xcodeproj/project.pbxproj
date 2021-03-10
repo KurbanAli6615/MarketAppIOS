@@ -174,11 +174,11 @@
 				0609D3B5259C50DF004F45F1 /* IteamsTableViewController.swift */,
 				06AE3524259DC46B00250691 /* ItemViewController.swift */,
 				06673E4C25A4654A004A457C /* BasketViewController.swift */,
-				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
 				0635BD7F25AC4726004F7AF5 /* SearchViewController.swift */,
 				068BECE525B44E4100FE23DC /* ConfirmOrderViewController.swift */,
 				06C477ED25C5904E00014BA7 /* OrdersViewController.swift */,
 				063CAC9425CAAB0400ECF74E /* OrderDetailsViewController.swift */,
+				06D248AD25A85B6F002BC505 /* ProfileTableViewController.swift */,
 				06D248B325A86889002BC505 /* Login View */,
 				060F951B25D3BE9E00ACD355 /* Admin Views */,
 			);

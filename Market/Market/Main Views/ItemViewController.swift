@@ -30,6 +30,7 @@ class ItemViewController: UIViewController {
     //    MARK:- ViewLife cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         setupUI()
         downloadPictures()
         

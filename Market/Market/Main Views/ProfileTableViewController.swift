@@ -29,7 +29,7 @@ class ProfileTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         
         //        Check login status
-       
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         checkLoginStatus()
         checkOnBoardingStatus()
     }

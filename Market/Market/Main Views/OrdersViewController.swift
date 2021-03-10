@@ -32,7 +32,7 @@ class OrdersViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         if (MUser.currentUser() != nil){
             downloadOrder()
         }else{
