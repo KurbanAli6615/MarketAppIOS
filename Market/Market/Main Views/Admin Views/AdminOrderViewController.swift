@@ -25,6 +25,12 @@ class AdminOrderViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         deliveryStatusButtonOutlet.layer.cornerRadius = 15
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setOwnerName()
     }
     
     //    MARK:-IBActions
@@ -33,8 +39,6 @@ class AdminOrderViewController: UIViewController {
         showAlert()
     }
     
-//    MARK:- Halpers
-     
     @objc func updateOrderStatus(action: UIAlertAction){
         showLoadingIndicator()
         FirebaseReference(.Orders).document(order.id).updateData([kISDELIVERED : true]) { (error) in
@@ -46,6 +50,34 @@ class AdminOrderViewController: UIViewController {
             }
         }
     }
+    
+//    MARK:- Halpers
+    
+    func setOwnerName() {
+        ownerName { (name, error) in
+            if error == nil {
+                self.ownerNameLabel.text = name
+            }
+        }
+    }
+    
+    func ownerName(complition: @escaping(_ name : String,_ error : Error?) -> Void) {
+        
+        var owner: MUser?
+        
+        FirebaseReference(.User).document(order.ownerID).getDocument { (snapShot, error) in
+            if error == nil {
+                 owner = MUser.init(_dictionary: snapShot?.data() as! NSDictionary)
+                complition(owner!.fullName,nil)
+            } else {
+                print("Error in fetch owner name ",error!.localizedDescription)
+                complition("",nil)
+            }
+        }
+        
+        
+    }
+    
     
     func showAlert(){
         let alert = UIAlertController(title: "Change Delivery Status", message: "Are you sure to change status ?", preferredStyle: UIAlertController.Style.alert)

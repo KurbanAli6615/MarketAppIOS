@@ -16,6 +16,7 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var surnameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
+    @IBOutlet weak var logoutButtonOutlet: UIButton!
     
     //  MARK:- vars
     
@@ -26,7 +27,7 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserInfo()
-        
+        logoutButtonOutlet.layer.cornerRadius = 20
     }
     //  MARK:- IBActions
     

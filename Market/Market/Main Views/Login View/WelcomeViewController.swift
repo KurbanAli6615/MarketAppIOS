@@ -15,6 +15,9 @@ class WelcomeViewController: UIViewController {
     //    MARK:- IBOutlets
     
     
+    @IBOutlet weak var adminLoginButtonOutlet: UIButton!
+    @IBOutlet weak var registerButtonOutlet: UIButton!
+    @IBOutlet weak var loginButtonOutlet: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var resendButtonOutlet: UIButton!
@@ -29,7 +32,11 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        adminLoginButtonOutlet.layer.cornerRadius = 15
+        registerButtonOutlet.layer.cornerRadius = 15
+        loginButtonOutlet.layer.cornerRadius = 15
+        resendButtonOutlet.layer.cornerRadius = 15
+//        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
     }
     
     override func viewDidAppear(_ animated: Bool) {

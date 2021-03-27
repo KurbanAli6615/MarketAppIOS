@@ -29,7 +29,6 @@ class ConfirmOrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        setAddress()
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
     }
     
@@ -53,14 +52,7 @@ class ConfirmOrderViewController: UIViewController {
     
 //    MARK:- Halpers
     
-    private func setAddress(){
-        if MUser.currentUser() != nil && MUser.currentUser()!.onBoard{
-            addressTextField.text = MUser.currentUser()!.fullAddess
-        } else {
-            addressTextField.text = "Please Finish Onbording first !"
-            confirmOrderButtonOutlet.isEnabled = false
-        }
-    }
+ 
     
     private func popViewController(){
         self.navigationController?.popViewController(animated: true)

@@ -22,6 +22,7 @@ class CategoryCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -81,6 +82,7 @@ class CategoryCollectionViewController: UICollectionViewController {
 }
 
 //    MARK:- Halpers
+
     
     public func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
