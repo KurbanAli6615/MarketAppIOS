@@ -13,24 +13,27 @@ class AdminOrderViewController: UIViewController {
     //    MARK:- Vars
     
     var order:Order!
+    var allItemsInOrder = [Item]()
     var activityIndicator: NVActivityIndicatorView?
     
     //    MARK:-IBOutlet
     
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var deliveryStatusButtonOutlet: UIButton!
     @IBOutlet weak var ownerNameLabel: UILabel!
+    @IBOutlet weak var orderTotalLabel: UILabel!
     
     //    MARK:-View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        deliveryStatusButtonOutlet.layer.cornerRadius = 15
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupUI()
         setOwnerName()
+        downloadItemsFromOrder()
     }
     
     //    MARK:-IBActions
@@ -53,6 +56,13 @@ class AdminOrderViewController: UIViewController {
     
 //    MARK:- Halpers
     
+    func setupUI(){
+        deliveryStatusButtonOutlet.layer.cornerRadius = 15
+        tableView.rowHeight = 80
+        tableView.tableFooterView = UIView()
+        orderTotalLabel.text = convertToCurrency(order!.orderTotal)
+    }
+    
     func setOwnerName() {
         ownerName { (name, error) in
             if error == nil {
@@ -74,8 +84,13 @@ class AdminOrderViewController: UIViewController {
                 complition("",nil)
             }
         }
-        
-        
+    }
+    
+    private func downloadItemsFromOrder(){
+        downloadItems(order!.orderedItemsIds) { (allItems) in
+            self.allItemsInOrder = allItems
+            self.tableView.reloadData()
+        }
     }
     
     
@@ -108,5 +123,23 @@ class AdminOrderViewController: UIViewController {
             activityIndicator!.stopAnimating()
             self.view.isUserInteractionEnabled = true
         }
+    }
+}
+
+extension AdminOrderViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        allItemsInOrder.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! ItemTableViewCell
+        
+        cell.generateCell(allItemsInOrder[indexPath.row])
+
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

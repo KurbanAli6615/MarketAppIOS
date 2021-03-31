@@ -17,32 +17,33 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category Name" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqb-bP-i1J">
-                        <rect key="frame" x="168.5" y="30.5" width="119.5" height="21"/>
+                        <rect key="frame" x="75" y="30.5" width="208" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qyC-nB-M2Y">
-                        <rect key="frame" x="10" y="16" width="50" height="50"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8ed-Fi-gpu">
+                        <rect key="frame" x="10" y="13.5" width="55" height="55"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="50" id="Wr7-po-PjK"/>
-                            <constraint firstAttribute="height" constant="50" id="uGm-B0-ljV"/>
+                            <constraint firstAttribute="height" constant="55" id="40z-TL-e3P"/>
+                            <constraint firstAttribute="width" constant="55" id="O6k-eA-ZUF"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="dqb-bP-i1J" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Ukn-RM-wj6"/>
-                    <constraint firstAttribute="trailing" secondItem="dqb-bP-i1J" secondAttribute="trailing" constant="5" id="Z1P-S8-bYn"/>
-                    <constraint firstItem="qyC-nB-M2Y" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="hXw-vU-7hE"/>
-                    <constraint firstItem="qyC-nB-M2Y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="qDA-B8-iPS"/>
+                    <constraint firstItem="dqb-bP-i1J" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="5xY-le-KGY"/>
+                    <constraint firstItem="8ed-Fi-gpu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="Czp-Kk-O1e"/>
+                    <constraint firstItem="8ed-Fi-gpu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GWz-b2-VSY"/>
+                    <constraint firstItem="dqb-bP-i1J" firstAttribute="leading" secondItem="8ed-Fi-gpu" secondAttribute="trailing" constant="10" id="LJd-g8-ozE"/>
+                    <constraint firstAttribute="trailing" secondItem="dqb-bP-i1J" secondAttribute="trailing" constant="10" id="PHe-Yi-g7s"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="categoryImage" destination="qyC-nB-M2Y" id="ui8-25-5Md"/>
+                <outlet property="categoryImage" destination="8ed-Fi-gpu" id="qTe-cA-VUc"/>
                 <outlet property="categoryNameLabel" destination="dqb-bP-i1J" id="ulr-zS-B4c"/>
             </connections>
-            <point key="canvasLocation" x="34.782608695652179" y="99.107142857142847"/>
+            <point key="canvasLocation" x="-77" y="61"/>
         </tableViewCell>
     </objects>
 </document>

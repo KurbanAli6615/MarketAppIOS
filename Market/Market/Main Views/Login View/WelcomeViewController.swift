@@ -15,6 +15,7 @@ class WelcomeViewController: UIViewController {
     //    MARK:- IBOutlets
     
     
+    @IBOutlet weak var testView: UIView!
     @IBOutlet weak var adminLoginButtonOutlet: UIButton!
     @IBOutlet weak var registerButtonOutlet: UIButton!
     @IBOutlet weak var loginButtonOutlet: UIButton!
@@ -36,12 +37,14 @@ class WelcomeViewController: UIViewController {
         registerButtonOutlet.layer.cornerRadius = 15
         loginButtonOutlet.layer.cornerRadius = 15
         resendButtonOutlet.layer.cornerRadius = 15
-//        self.view.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        testView.isHidden = true
+        testView.layer.opacity = 0.7
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .circleStrokeSpin , color: #colorLiteral(red: 0.9100239873, green: 0.4986173511, blue: 0.4462146759, alpha: 1), padding: nil)
+        
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .circleStrokeSpin , color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), padding: nil)
     }
     
     //    MARK:- IBActions
@@ -179,6 +182,7 @@ class WelcomeViewController: UIViewController {
     //    MARK:- Activity indicator
     
     private func showLoadingIndicator(){
+        testView.isHidden = false
         if activityIndicator != nil {
             self.view.addSubview(activityIndicator!)
             activityIndicator?.startAnimating()
@@ -187,6 +191,7 @@ class WelcomeViewController: UIViewController {
     }
     
     private func hideLoadingIndicator(){
+        testView.isHidden = true
         if activityIndicator != nil {
             activityIndicator!.removeFromSuperview()
             activityIndicator!.stopAnimating()

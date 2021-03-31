@@ -145,7 +145,7 @@ extension AdminManageOrdersViewController: UITableViewDelegate, UITableViewDataS
         downloadOwnerName(userId: allOrders[indexPath.row].ownerID) { (name) in
             cell.ownerNameLabel.text = name
         }
-        cell.orderTotalLabel.text = String(allOrders[indexPath.row].orderTotal)
+        cell.orderTotalLabel.text = convertToCurrency(allOrders[indexPath.row].orderTotal)
         return cell
     }
     

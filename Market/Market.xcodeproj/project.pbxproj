@@ -132,9 +132,9 @@
 				0647FA8E25DE5CFB00318F35 /* AdminCategoryViewController.swift */,
 				0647FA9125DE764800318F35 /* AdminItemsViewController.swift */,
 				060577D625E3C9A700F5BA94 /* AdminUpdateItemViewController.swift */,
-				060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */,
 				06E7EDBE25ECBC7200086077 /* AdminManageOrdersViewController.swift */,
 				064ACD0725F0E66D003E689A /* AdminOrderViewController.swift */,
+				060577DD25E3D69700F5BA94 /* AdminLogoutViewController.swift */,
 			);
 			path = "Admin Views";
 			sourceTree = "<group>";

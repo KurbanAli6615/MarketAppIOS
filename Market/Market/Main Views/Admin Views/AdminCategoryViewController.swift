@@ -107,7 +107,7 @@ extension AdminCategoryViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AdminCategoryTableViewCell", for: indexPath) as! AdminCategoryTableViewCell
-        cell.imageView?.image = allCategories[indexPath.row].image
+        cell.categoryImage?.image = allCategories[indexPath.row].image
         cell.categoryNameLabel.text = allCategories[indexPath.row].name
         
         return cell

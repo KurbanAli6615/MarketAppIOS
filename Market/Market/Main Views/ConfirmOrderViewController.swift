@@ -12,7 +12,8 @@ class ConfirmOrderViewController: UIViewController {
     
 //     MARK:- IBOutlets
     
-    @IBOutlet weak var addressTextField: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var ownerNameLabel: UILabel!
     @IBOutlet weak var confirmOrderButtonOutlet: UIButton!
     
     //    MARK:- Vars
@@ -29,7 +30,7 @@ class ConfirmOrderViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
+        setupUi()
     }
     
 //    MARK:- IBActions
@@ -52,7 +53,12 @@ class ConfirmOrderViewController: UIViewController {
     
 //    MARK:- Halpers
     
- 
+    private func setupUi(){
+        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
+        confirmOrderButtonOutlet.layer.cornerRadius = 18
+       addressLabel.text = MUser.currentUser()!.fullAddess
+        ownerNameLabel.text = MUser.currentUser()!.fullName
+    }
     
     private func popViewController(){
         self.navigationController?.popViewController(animated: true)
