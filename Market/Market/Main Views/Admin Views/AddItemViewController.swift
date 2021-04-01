@@ -93,6 +93,7 @@ class AddItemViewController: UIViewController {
         item.categoryId = category.id
         item.description = descriptionTextView.text!
         item.price = Double(priceTextField.text!)
+        item.isActive = true
         
         if itemImages.count > 0{
             uploadImages(images: itemImages, itemId: item.id) { (imageLinksArray) in

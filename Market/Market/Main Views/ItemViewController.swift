@@ -72,16 +72,21 @@ class ItemViewController: UIViewController {
     
     @objc func addToBasketButtonPressed(){
         
-//        TODO: check id user logged in or show login view
-        
         if MUser.currentUser() != nil {
-            downloadBasketFromFirestore(MUser.currentId()) { (basket) in
-                if basket == nil {
-                    self.createNewBasket()
-                }else{
-                    basket!.itemIds.append(self.item.id)
-                    self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+            if item.isActive{
+                downloadBasketFromFirestore(MUser.currentId()) { (basket) in
+                    if basket == nil {
+                        self.createNewBasket()
+                    }else{
+                        basket!.itemIds.append(self.item.id)
+                        self.updateBasket(basket: basket!, withValues: [kITEMIDS : basket!.itemIds])
+                    }
                 }
+            }else {
+                self.hud.textLabel.text = "This Item is currently inactive. Please check later"
+                self.hud.indicatorView = JGProgressHUDErrorIndicatorView()
+                self.hud.show(in: self.view)
+                self.hud.dismiss(afterDelay: 2.0)
             }
         }else {
             showLoginView()
@@ -113,7 +118,6 @@ class ItemViewController: UIViewController {
                 self.hud.dismiss(afterDelay: 2.0)
                 
             }else{
-                
                 self.hud.textLabel.text = "Added to basket"
                 self.hud.indicatorView = JGProgressHUDSuccessIndicatorView()
                 self.hud.show(in: self.view)
@@ -149,20 +153,6 @@ extension ItemViewController: UICollectionViewDataSource, UICollectionViewDelega
 }
 
 extension ItemViewController: UICollectionViewDelegateFlowLayout{
-    
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-    //
-    //        let avalibleWidth = collectionView.frame.width - sectionInsets.left
-    //
-    //        print(avalibleWidth)
-    //        return CGSize(width: avalibleWidth, height: cellheight)
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-    //        return sectionInsets
-    //    }
-    //    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-    //        return sectionInsets.left
-    //    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 0,left: 0,bottom: 0,right: 0)

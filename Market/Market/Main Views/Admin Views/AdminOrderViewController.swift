@@ -60,7 +60,7 @@ class AdminOrderViewController: UIViewController {
         deliveryStatusButtonOutlet.layer.cornerRadius = 15
         tableView.rowHeight = 80
         tableView.tableFooterView = UIView()
-        orderTotalLabel.text = convertToCurrency(order!.orderTotal)
+        orderTotalLabel.text = "Order Total : \(convertToCurrency(order!.orderTotal))"
     }
     
     func setOwnerName() {

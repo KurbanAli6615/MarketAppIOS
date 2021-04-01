@@ -21,7 +21,7 @@ class OrderTableViewCell: UITableViewCell {
     
     var orderDetails: Order? {
         didSet {
-            orderTotalLabel.text = "Total: \(orderDetails?.orderTotal ?? 0)"
+            orderTotalLabel.text = "Total: \(orderDetails?.orderTotal.rounded() ?? 0)"
             
             if (orderDetails?.isDelivered ?? false) {
                 deliverStatusImageView.image = UIImage(named: "delivered")

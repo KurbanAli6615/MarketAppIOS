@@ -763,11 +763,27 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="805-iE-d87">
+                                <rect key="frame" x="130" y="665" width="130" height="32"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="ghd-nc-Axo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="Deactive">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="itemStatusButtonPressed:" destination="HD2-Mk-5QJ" eventType="touchUpInside" id="N0b-6F-9GK"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="BoC-5o-EXF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="805-iE-d87" firstAttribute="centerX" secondItem="fJr-JF-l15" secondAttribute="centerX" id="8EE-st-CtR"/>
                             <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="Adq-9K-XgD" secondAttribute="trailing" constant="20" id="8Yh-Lf-4vw"/>
+                            <constraint firstItem="BoC-5o-EXF" firstAttribute="bottom" secondItem="805-iE-d87" secondAttribute="bottom" constant="10" id="C83-2X-VW3"/>
                             <constraint firstItem="AYA-n1-f3Q" firstAttribute="leading" secondItem="BoC-5o-EXF" secondAttribute="leading" constant="20" id="RIj-Yf-j5A"/>
                             <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="AYA-n1-f3Q" secondAttribute="trailing" constant="20" id="TVI-3A-FkR"/>
                             <constraint firstItem="BoC-5o-EXF" firstAttribute="trailing" secondItem="9Bg-ch-Prr" secondAttribute="trailing" constant="20" id="a3a-Wp-srp"/>
@@ -789,6 +805,7 @@
                         <outlet property="itemDescription" destination="AYA-n1-f3Q" id="dB0-Mm-ut8"/>
                         <outlet property="itemName" destination="9Bg-ch-Prr" id="2ol-d6-Nmp"/>
                         <outlet property="itemPrice" destination="Adq-9K-XgD" id="p2K-bS-Hpr"/>
+                        <outlet property="itemStatusButtonOutlet" destination="805-iE-d87" id="eaO-FG-jWc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SOF-Xn-wKg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -2179,6 +2196,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

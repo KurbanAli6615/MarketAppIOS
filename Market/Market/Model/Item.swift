@@ -16,6 +16,7 @@ class Item {
     var description: String!
     var price: Double!
     var imageLinks: [String]!
+    var isActive: Bool!
     
     init() {}
     
@@ -27,6 +28,7 @@ class Item {
         description = _dictionary[kDESCRIPTION] as? String
         price = _dictionary[kPRICE] as? Double
         imageLinks = _dictionary[kIMAGELINKS] as? [String]
+        isActive = _dictionary[kISACTIVE] as? Bool
     }
 }
 
@@ -43,7 +45,7 @@ func saveItemToFirestore(_ item: Item) {
 
 func itemDictionaryFrom(_ item: Item) -> NSDictionary {
     
-    return NSDictionary(objects: [item.id, item.categoryId, item.name, item.description, item.price, item.imageLinks], forKeys: [kOBJECTID as NSCopying, kCATEGORYID as NSCopying, kNAME as NSCopying, kDESCRIPTION as NSCopying, kPRICE as NSCopying, kIMAGELINKS as NSCopying])
+    return NSDictionary(objects: [item.id, item.categoryId, item.name, item.description, item.price, item.imageLinks, item.isActive], forKeys: [kOBJECTID as NSCopying, kCATEGORYID as NSCopying, kNAME as NSCopying, kDESCRIPTION as NSCopying, kPRICE as NSCopying, kIMAGELINKS as NSCopying, kISACTIVE as NSCopying])
 }
 
 //MARK:-    Download function

@@ -33,6 +33,7 @@ class IteamsTableViewController: UITableViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
+
         if category != nil {
             loadItems()
         }
