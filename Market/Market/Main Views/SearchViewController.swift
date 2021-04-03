@@ -23,10 +23,12 @@ class SearchViewController: UIViewController {
     var searchResults: [Item] = []
     var activityIndicator: NVActivityIndicatorView?
     
+    
     //    MARK: - View lifecycles
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         tblView.tableFooterView = UIView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
         searchButtonOutlet.layer.cornerRadius = 20

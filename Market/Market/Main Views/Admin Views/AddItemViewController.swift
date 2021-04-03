@@ -14,6 +14,7 @@ class AddItemViewController: UIViewController {
     
     //    MARK:- IBOutlets
     
+    @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var priceTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -31,12 +32,12 @@ class AddItemViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        print(category.id)
+        loadingBackgroundView.layer.opacity = 0.8
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballPulseSync, color: #colorLiteral(red: 0.9998469949, green: 0.4941213727, blue: 0.4734867811, alpha: 1), padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30, width: 60, height: 60), type: .ballRotateChase, color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), padding: nil)
     }
     
     //    MARK:- IBActions
@@ -115,6 +116,9 @@ class AddItemViewController: UIViewController {
 //    MARK: Activity Indicator
     
     private func showLoadingIndicator(){
+        self.navigationController?.isNavigationBarHidden = true
+        self.tabBarController?.tabBar.isHidden = true
+        loadingBackgroundView.isHidden = false
         if activityIndicator != nil {
             self.view.addSubview(activityIndicator!)
             activityIndicator!.startAnimating()
@@ -122,6 +126,9 @@ class AddItemViewController: UIViewController {
     }
     
     private func hideLoadingIndicator(){
+        self.navigationController?.isNavigationBarHidden = false
+        self.tabBarController?.tabBar.isHidden = false
+        loadingBackgroundView.isHidden = true
         if activityIndicator != nil {
             activityIndicator?.removeFromSuperview()
             activityIndicator!.stopAnimating()

@@ -38,13 +38,13 @@ class WelcomeViewController: UIViewController {
         loginButtonOutlet.layer.cornerRadius = 15
         resendButtonOutlet.layer.cornerRadius = 15
         testView.isHidden = true
-        testView.layer.opacity = 0.7
+        testView.layer.opacity = 0.8
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .circleStrokeSpin , color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .ballClipRotatePulse , color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), padding: nil)
     }
     
     //    MARK:- IBActions

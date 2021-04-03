@@ -19,6 +19,7 @@ class AdminLoginViewController: UIViewController {
     
     //    MARK:- IBOutlets
     
+    @IBOutlet weak var loadingBackgroundView: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButtonOutlet: UIButton!
@@ -27,7 +28,7 @@ class AdminLoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loadingBackgroundView.layer.opacity = 0.8
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +36,7 @@ class AdminLoginViewController: UIViewController {
         loginButtonOutlet.layer.cornerRadius = 17
         cleareTextFields()
         
-        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .orbit , color: #colorLiteral(red: 0.9100239873, green: 0.4986173511, blue: 0.4462146759, alpha: 1), padding: nil)
+        activityIndicator = NVActivityIndicatorView(frame: CGRect(x: self.view.frame.width / 2 - 30, y: self.view.frame.height / 2 - 30 , width: 60, height: 60), type: .ballClipRotatePulse , color: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), padding: nil)
     }
     
     //    MARK:- IBAtions
@@ -76,6 +77,7 @@ class AdminLoginViewController: UIViewController {
     //    MARK:- Activity indicator
     
     private func showLoadingIndicator(){
+        loadingBackgroundView.isHidden = false
         if activityIndicator != nil {
             self.view.addSubview(activityIndicator!)
             activityIndicator?.startAnimating()
@@ -84,6 +86,7 @@ class AdminLoginViewController: UIViewController {
     }
     
     private func hideLoadingIndicator(){
+        loadingBackgroundView.isHidden = true
         if activityIndicator != nil {
             activityIndicator!.removeFromSuperview()
             activityIndicator!.stopAnimating()
