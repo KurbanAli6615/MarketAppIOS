@@ -21,7 +21,6 @@ class ProfileTableViewController: UITableViewController {
     //    MARK:- View Lifecycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.tableFooterView = UIView()
     }
     
@@ -37,7 +36,6 @@ class ProfileTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 3
     }
     
@@ -48,6 +46,7 @@ class ProfileTableViewController: UITableViewController {
     }
     
 // MARK:- Halpers
+    
     private func checkLoginStatus(){
         if MUser.currentUser() == nil {
             createRightBarButton(title: "Login")

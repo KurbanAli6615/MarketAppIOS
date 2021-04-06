@@ -178,6 +178,7 @@ class WelcomeViewController: UIViewController {
     
     private func dismissView(){
         self.dismiss(animated: true, completion: nil)
+
     }
     //    MARK:- Activity indicator
     
