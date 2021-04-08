@@ -13,6 +13,7 @@ class ProfileTableViewController: UITableViewController {
     
     @IBOutlet weak var finishRegistrationButtonOutlet: UIButton!
     @IBOutlet weak var purchaseHistoryButtonOutlet: UIButton!
+    @IBOutlet weak var termsAndPrivacyButton: UIButton!
     
     //    MARK:- Vars
     
@@ -88,6 +89,11 @@ class ProfileTableViewController: UITableViewController {
         }else {
             goToEditProfile()
         }
+    }
+    @IBAction func termsAndPrivacyButtonTapped(_ sender: Any) {
+        let vc = storyboard?.instantiateViewController(identifier: "TermsAndPrivacyViewController") as! TermsAndPrivacyViewController
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 

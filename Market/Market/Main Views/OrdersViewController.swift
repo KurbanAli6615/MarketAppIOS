@@ -25,7 +25,6 @@ class OrdersViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         registerCell()
-        
     }
     
 
@@ -50,6 +49,7 @@ class OrdersViewController: UIViewController {
     }
     
     //  MARK:- Halpers
+
     
     func downloadOrder(){
         downloadFromOrders(MUser.currentId()) { (allOrders) in
@@ -101,6 +101,30 @@ class OrdersViewController: UIViewController {
 
 // MARK:- Extension for the tableView Methods
 extension OrdersViewController: UITableViewDelegate, UITableViewDataSource{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if orderArray.count > 0
+        {
+            tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            if MUser.currentUser() != nil {
+                noDataLabel.text = "Your order list is empty. Go and buy some products !"
+            }else {
+                noDataLabel.text = "Please Login first !"
+            }
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return numOfSections
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return orderArray.count

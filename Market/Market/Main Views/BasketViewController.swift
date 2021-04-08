@@ -13,6 +13,7 @@ class BasketViewController: UIViewController {
     //    MARK:- IBOutlets
     
     @IBOutlet weak var footerView: UIView!
+    @IBOutlet weak var itemsInBasketLabel: UILabel!
     @IBOutlet weak var BasketTotalPriceLabel: UILabel!
     @IBOutlet weak var totalItemsLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
@@ -34,8 +35,9 @@ class BasketViewController: UIViewController {
         tableView.tableFooterView = UIView()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkButtonAndOutletStatus()
         checkOutButtonOutlet.layer.cornerRadius = 20
 
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
@@ -47,6 +49,8 @@ class BasketViewController: UIViewController {
             self.updateTotalLable(true)
         }
     }
+    
+
     
     //    MARK:- IBActions
     @IBAction func checkOutButtonPressed(_ sender: Any) {
@@ -83,6 +87,21 @@ class BasketViewController: UIViewController {
     }
     
     //    MARK:- halper Functions
+    
+    
+    func checkButtonAndOutletStatus(){
+        if MUser.currentUser() != nil {
+            BasketTotalPriceLabel.isHidden = false
+            checkOutButtonOutlet.isHidden = false
+            totalItemsLabel.isHidden = false
+            itemsInBasketLabel.isHidden = false
+        }else {
+            BasketTotalPriceLabel.isHidden = true
+            checkOutButtonOutlet.isHidden = true
+            totalItemsLabel.isHidden = true
+            itemsInBasketLabel.isHidden = true
+        }
+    }
     
     private func updateTotalLable(_ isEmpty: Bool){
         if isEmpty{
@@ -185,6 +204,30 @@ class BasketViewController: UIViewController {
 
 
 extension BasketViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        var numOfSections: Int = 0
+        if allItems.count > 0
+        {
+            tableView.separatorStyle = .singleLine
+            numOfSections            = 1
+            tableView.backgroundView = nil
+        }
+        else
+        {
+            let noDataLabel: UILabel  = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: tableView.bounds.size.height))
+            if MUser.currentUser() != nil {
+                noDataLabel.text = "Your Basket is Empty !!!"
+            }else {
+                noDataLabel.text = "Please Login first !"
+            }
+            noDataLabel.textColor     = UIColor.black
+            noDataLabel.textAlignment = .center
+            tableView.backgroundView  = noDataLabel
+            tableView.separatorStyle  = .none
+        }
+        return numOfSections
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return allItems.count

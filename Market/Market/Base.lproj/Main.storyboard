@@ -23,15 +23,13 @@
                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-yJ-DZp">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="134"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua4-RL-fab">
-                                                <rect key="frame" x="8" y="23" width="398" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ua4-RL-fab">
+                                                <rect key="frame" x="10" y="20" width="370" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llQ-Yy-pdf">
-                                                <rect key="frame" x="8" y="78" width="398" height="38"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="llQ-Yy-pdf">
+                                                <rect key="frame" x="10" y="74" width="370" height="46"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                                 <state key="normal" title="Search">
@@ -44,7 +42,13 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstItem="llQ-Yy-pdf" firstAttribute="leading" secondItem="rk6-yJ-DZp" secondAttribute="leading" constant="10" id="5SQ-zR-kIo"/>
                                             <constraint firstAttribute="height" constant="134" id="AWo-qJ-jdn"/>
+                                            <constraint firstItem="llQ-Yy-pdf" firstAttribute="top" secondItem="Ua4-RL-fab" secondAttribute="bottom" constant="20" id="D2V-0r-CjM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ua4-RL-fab" secondAttribute="trailing" constant="10" id="XgM-P5-NXl"/>
+                                            <constraint firstItem="Ua4-RL-fab" firstAttribute="top" secondItem="rk6-yJ-DZp" secondAttribute="top" constant="20" id="bat-2a-TNl"/>
+                                            <constraint firstAttribute="trailing" secondItem="llQ-Yy-pdf" secondAttribute="trailing" constant="10" id="qfx-sN-6VD"/>
+                                            <constraint firstItem="Ua4-RL-fab" firstAttribute="leading" secondItem="rk6-yJ-DZp" secondAttribute="leading" constant="10" id="yVb-kn-ahL"/>
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFZ-wg-GGX">
@@ -299,6 +303,7 @@
                     <connections>
                         <outlet property="BasketTotalPriceLabel" destination="fvV-9G-Xov" id="fCo-sz-GCc"/>
                         <outlet property="checkOutButtonOutlet" destination="gPU-ue-AnW" id="Per-Gz-lKO"/>
+                        <outlet property="itemsInBasketLabel" destination="zzq-gJ-Z8y" id="Z3M-Jg-BP8"/>
                         <outlet property="tableView" destination="Qnk-lV-IUK" id="AYc-qp-jAh"/>
                         <outlet property="totalItemsLabel" destination="FeK-Pt-YtV" id="RNL-QN-M69"/>
                         <segue destination="dCQ-PU-Y46" kind="show" id="gMv-hX-3TX"/>
@@ -1732,8 +1737,7 @@
                                                     <rect key="frame" x="16" y="7" width="335.33333333333331" height="30"/>
                                                     <state key="normal" title="Terms &amp; Privacy"/>
                                                     <connections>
-                                                        <action selector="termsAndPrivacyButtonTapped:" destination="Zxb-F8-FvG" eventType="touchUpInside" id="fyp-v3-xIq"/>
-                                                        <segue destination="ODb-8G-Sa0" kind="show" id="8cy-Yh-cz6"/>
+                                                        <action selector="termsAndPrivacyButtonTapped:" destination="Zxb-F8-FvG" eventType="touchUpInside" id="rbC-qi-OMk"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -1758,6 +1762,7 @@
                     <connections>
                         <outlet property="finishRegistrationButtonOutlet" destination="WbN-5c-zgO" id="5hG-AC-rkH"/>
                         <outlet property="purchaseHistoryButtonOutlet" destination="lMg-t5-MGF" id="RqC-R0-ybY"/>
+                        <outlet property="termsAndPrivacyButton" destination="06d-DQ-FyR" id="tWg-cT-65b"/>
                         <segue destination="SgM-6a-JXy" kind="show" identifier="profileToEditSeg" id="bfA-sj-GRZ"/>
                     </connections>
                 </tableViewController>
@@ -1929,13 +1934,13 @@
         <!--Terms & Privacy-->
         <scene sceneID="gOZ-C5-SrG">
             <objects>
-                <viewController id="ODb-8G-Sa0" customClass="TermsAndPrivacyViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TermsAndPrivacyViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ODb-8G-Sa0" customClass="TermsAndPrivacyViewController" customModule="Market" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hLW-bq-GTf">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HQ8-eJ-inN">
-                                <rect key="frame" x="0.0" y="88" width="390" height="829"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bKQ-MO-9a0">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1500"/>
@@ -2029,8 +2034,8 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="225" id="yMB-7P-KhX"/>
                                                         </constraints>
-                                                        <mutableString key="text">When you visit our website, our servers may automatically log the standard data provided by your web browser. It may include your device’s Internet Protocol (IP) address, your browser type and version, the pages you visit, the time and date of your visit, the time spent on each page, other details about your visit, and technical details that occur in conjunction with any errors you may encounter.
-Please be aware that while this information may not be personally identifying by itself, it may be possible to combine it with other data to personally identify individual persons.</mutableString>
+                                                        <string key="text">When you visit our website, our servers may automatically log the standard data provided by your web browser. It may include your device’s Internet Protocol (IP) address, your browser type and version, the pages you visit, the time and date of your visit, the time spent on each page, other details about your visit, and technical details that occur in conjunction with any errors you may encounter.
+Please be aware that while this information may not be personally identifying by itself, it may be possible to combine it with other data to personally identify individual persons.</string>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -2044,9 +2049,9 @@ Please be aware that while this information may not be personally identifying by
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="267" id="Vi0-Qg-nB3"/>
                                                         </constraints>
-                                                        <mutableString key="text">When we collect and process personal information, and while we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification.
+                                                        <string key="text">When we collect and process personal information, and while we retain this information, we will protect it within commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying, use, or modification.
 Although we will do our best to protect the personal information you provide to us, we advise that no method of electronic transmission or storage is 100% secure, and no one can guarantee absolute data security. We will comply with laws applicable to us in respect of any data breach.
-You are responsible for selecting any password and its overall security strength, ensuring the security of your own information within the bounds of our services.</mutableString>
+You are responsible for selecting any password and its overall security strength, ensuring the security of your own information within the bounds of our services.</string>
                                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>

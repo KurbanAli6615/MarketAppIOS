@@ -141,6 +141,13 @@
 			path = "Admin Views";
 			sourceTree = "<group>";
 		};
+		06172993261EEE53002E2ED8 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
 		065D103B259B3244008EB2CA /* Halpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,6 +233,7 @@
 				06CBA36D259B25A500DA2811 /* Main.storyboard */,
 				065D1040259B3263008EB2CA /* Main Views */,
 				065D103D259B3251008EB2CA /* Custom Cells */,
+				06172993261EEE53002E2ED8 /* Custom Views */,
 				065D1048259B32B9008EB2CA /* Model */,
 				065D103B259B3244008EB2CA /* Halpers */,
 				06CBA370259B25A500DA2811 /* Assets.xcassets */,
