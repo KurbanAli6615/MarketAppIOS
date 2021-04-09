@@ -38,7 +38,7 @@ class BasketViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkButtonAndOutletStatus()
-        checkOutButtonOutlet.layer.cornerRadius = 20
+        checkOutButtonOutlet.layer.cornerRadius = 15
 
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         if MUser.currentUser() != nil{

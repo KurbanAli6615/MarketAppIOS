@@ -27,7 +27,7 @@ class EditProfileViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadUserInfo()
-        logoutButtonOutlet.layer.cornerRadius = 20
+        logoutButtonOutlet.layer.cornerRadius = 15
     }
     //  MARK:- IBActions
     

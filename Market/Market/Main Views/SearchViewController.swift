@@ -31,7 +31,7 @@ class SearchViewController: UIViewController {
 
         tblView.tableFooterView = UIView()
         searchTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: UIControl.Event.editingChanged)
-        searchButtonOutlet.layer.cornerRadius = 20
+        searchButtonOutlet.layer.cornerRadius = 18
         tblView.emptyDataSetSource = self
         tblView.emptyDataSetDelegate = self
     }
