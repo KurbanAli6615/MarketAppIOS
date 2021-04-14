@@ -39,7 +39,7 @@ class BasketViewController: UIViewController {
         super.viewWillAppear(animated)
         checkButtonAndOutletStatus()
         checkOutButtonOutlet.layer.cornerRadius = 15
-
+        
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
         if MUser.currentUser() != nil{
             loadBasketFromFirestore()
@@ -50,7 +50,7 @@ class BasketViewController: UIViewController {
         }
     }
     
-
+    
     
     //    MARK:- IBActions
     @IBAction func checkOutButtonPressed(_ sender: Any) {
@@ -80,7 +80,6 @@ class BasketViewController: UIViewController {
             downloadItems(basket!.itemIds) { (allItems) in
                 self.allItems = allItems
                 self.updateTotalLable(false)
-                print("Items in Basket --> ", allItems.count)
                 self.tableView.reloadData()
             }
         }
@@ -242,7 +241,7 @@ extension BasketViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
-//    MARK:- UITable view delegate
+    //    MARK:- UITable view delegate
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
