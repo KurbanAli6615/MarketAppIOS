@@ -757,10 +757,10 @@
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="AYA-n1-f3Q">
-                                <rect key="frame" x="20" y="213" width="350" height="130"/>
+                                <rect key="frame" x="20" y="213" width="350" height="200"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="130" id="cig-ar-tI1"/>
+                                    <constraint firstAttribute="height" constant="200" id="cig-ar-tI1"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -839,17 +839,17 @@
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mtn-HU-JZT">
-                                <rect key="frame" x="20" y="164" width="350" height="128"/>
+                                <rect key="frame" x="20" y="164" width="350" height="200"/>
                                 <color key="backgroundColor" red="0.6808411593" green="0.6808411593" blue="0.6808411593" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="vF6-97-669"/>
+                                    <constraint firstAttribute="height" constant="200" id="vF6-97-669"/>
                                 </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QST-Gl-pKA">
-                                <rect key="frame" x="20" y="317" width="100" height="30"/>
+                                <rect key="frame" x="20" y="389" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="Of5-P4-8sL"/>
                                     <constraint firstAttribute="height" constant="30" id="TrR-P4-az9"/>
