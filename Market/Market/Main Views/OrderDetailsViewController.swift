@@ -93,8 +93,8 @@ class OrderDetailsViewController: UIViewController {
         
         // add the actions (buttons)
         
-        alert.addAction(UIAlertAction(title: "Cancel Order", style: UIAlertAction.Style.default, handler: confirmCancelOrder))
-        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Cancel Order", style: UIAlertAction.Style.cancel, handler: confirmCancelOrder))
+        alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
         
         // show the alert
         self.present(alert, animated: true, completion: nil)
