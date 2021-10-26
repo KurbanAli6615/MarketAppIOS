@@ -33,7 +33,11 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        adminLoginButtonOutlet.layer.cornerRadius = 15
+setupUI()
+    }
+    
+    func setupUI(){
+            adminLoginButtonOutlet.layer.cornerRadius = 15
         registerButtonOutlet.layer.cornerRadius = 15
         loginButtonOutlet.layer.cornerRadius = 15
         resendButtonOutlet.layer.cornerRadius = 15
