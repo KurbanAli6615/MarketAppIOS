@@ -31,7 +31,12 @@ class ItemViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
-        setupUI()
+                if item != nil{
+            self.title = item.name
+            nameLabel.text = item.name
+            priceLabel.text = convertToCurrency(item.price)
+            descriptionTextView.text = item.description
+        }
         downloadPictures()
         
         self.navigationItem.leftBarButtonItems = [UIBarButtonItem(image: UIImage(named: "back"), style: .plain, target: self, action: #selector(self.backAction))]
@@ -55,15 +60,7 @@ class ItemViewController: UIViewController {
     }
     
     //    MARK:- Setup UI
-    
-    private func setupUI(){
-        if item != nil{
-            self.title = item.name
-            nameLabel.text = item.name
-            priceLabel.text = convertToCurrency(item.price)
-            descriptionTextView.text = item.description
-        }
-    }
+
     
     //    MARK:- IBActions
     @objc func backAction (){
