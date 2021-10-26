@@ -86,7 +86,9 @@ class ItemViewController: UIViewController {
                 self.hud.dismiss(afterDelay: 2.0)
             }
         }else {
-            showLoginView()
+                    let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
+        
+        self.present(loginView, animated: true, completion: nil)
         }
     }
     
@@ -121,14 +123,6 @@ class ItemViewController: UIViewController {
                 self.hud.dismiss(afterDelay: 2.0)
             }
         }
-    }
-    
-    //    MARK:- Show Login View
-    
-    private func showLoginView(){
-        let loginView = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(identifier: "loginView")
-        
-        self.present(loginView, animated: true, completion: nil)
     }
 }
 
