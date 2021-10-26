@@ -70,6 +70,12 @@ func saveImageInFirebase(imageData: Data, fileName: String, complition: @escapin
 }
 
 
+//this function is use for download image
+func downloadImage1(){
+var downloadedCounters=0
+    var arr=[]
+    
+}
 func downloadImages (imageUrls: [String], completion: @escaping (_ images: [UIImage?])-> Void){
     
     var imageArray: [UIImage] = []
