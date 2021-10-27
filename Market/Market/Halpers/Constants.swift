@@ -62,6 +62,12 @@ public let kONBOARD = "onBoard"
 public let kPURCHASEDITEMIDS = "purchasedIteamIds"
 public let kISADMIN = "isAdmin"
 
+public let kALLUSER= "currentUser"
+public let kFULLNAME = "fullName"
+public let kFIRSTNAME = "firstname"
+public let kLASTNAME = "lastname"
+public let kEMAIL = "email"
+
 
 
 
