@@ -23,14 +23,18 @@ class OrderDetailsViewController: UIViewController {
     //    MARK:- View Life cycles
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+ setup()
+        
+    }
+    
+    func setup() {
+             tableView.tableFooterView = UIView()
         
         let rightBarButton = UIBarButtonItem(title: "Cancel Order", style: UIBarButtonItem.Style.plain, target: self, action: #selector(OrderDetailsViewController.cancelOrderButtonTapped))
         
         rightBarButton.tintColor = UIColor.red
-        self.navigationItem.rightBarButtonItem = rightBarButton
-        
-    }
+        self.navigationItem.rightBarButtonItem = rightBarButton   
+    } setup()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
