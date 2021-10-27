@@ -53,24 +53,6 @@ class ConfirmOrderViewController: UIViewController {
     
 //    MARK:- Halpers
     
-    private func setupUi(){
-        navigationController?.navigationBar.barTintColor = hexStringToUIColor(hex: "#657c89")
-        confirmOrderButtonOutlet.layer.cornerRadius = 18
-       addressLabel.text = MUser.currentUser()!.fullAddess
-        ownerNameLabel.text = MUser.currentUser()!.fullName
-    }
-    
-    private func popViewController(){
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    private func orderTotal(item: [Item]) -> Double {
-        var orderTotal: Double = 0
-        for i in item {
-            orderTotal += i.price
-        }
-        return orderTotal
-    }
     
     private func itemIdsfromItem(item: [Item]) -> [String]{
         var itemIds:[String] = []
@@ -79,17 +61,17 @@ class ConfirmOrderViewController: UIViewController {
         }
         return itemIds
     }
-    
-    
-    private func emptyTheBasket(){
         
-        basket!.itemIds = []
-        updateBasketInFirestore(basket!, withValues: [kITEMIDS : basket!.itemIds]) { (error) in
-            if error != nil {
-                print("Error updating basket ",error!.localizedDescription)
-            }
+    
+    private func itemIdsfromItem(item: [Item]) -> [String]{
+        var itemIds:[String] = []
+        for i in item {
+            itemIds.append(i.id)
         }
+        return itemIds
     }
+
+
     
     private func addItemsToPurchaseHistory(_ itemIds: [String]) {
         if MUser.currentUser() != nil {
