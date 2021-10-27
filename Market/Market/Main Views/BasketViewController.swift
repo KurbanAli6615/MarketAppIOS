@@ -67,13 +67,7 @@ class BasketViewController: UIViewController {
         }
     }
     
-    //    MARK:- Download Basket
-    private func loadBasketFromFirestore(){
-        downloadBasketFromFirestore(MUser.currentId()) { (basket) in
-            self.basket = basket
-            self.getBasketItems()
-        }
-    }
+
     
     private func getBasketItems(){
         if basket != nil{
@@ -88,19 +82,7 @@ class BasketViewController: UIViewController {
     //    MARK:- halper Functions
     
     
-    func checkButtonAndOutletStatus(){
-        if MUser.currentUser() != nil {
-            BasketTotalPriceLabel.isHidden = false
-            checkOutButtonOutlet.isHidden = false
-            totalItemsLabel.isHidden = false
-            itemsInBasketLabel.isHidden = false
-        }else {
-            BasketTotalPriceLabel.isHidden = true
-            checkOutButtonOutlet.isHidden = true
-            totalItemsLabel.isHidden = true
-            itemsInBasketLabel.isHidden = true
-        }
-    }
+
     
     private func updateTotalLable(_ isEmpty: Bool){
         if isEmpty{
