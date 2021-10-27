@@ -21,7 +21,7 @@ class BasketViewController: UIViewController {
     
     //    MARK:- Vars
     
-    var basket: Basket?
+  
     var allItems: [Item] = []
     var purchaseItemIds: [String] = []
     
@@ -29,11 +29,7 @@ class BasketViewController: UIViewController {
     
     //    MARK:- View Life cycles
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tableView.tableFooterView = footerView
-        tableView.tableFooterView = UIView()
-    }
+ 
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
