@@ -24,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //this function is use for configure firebase
     FirebaseApp.configure()
     }
+    
+    
+    func setupFirebaseMethod(){
+    FirebaseApp.configure()
+   print("firebasse initialized");
+    }
+    
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
